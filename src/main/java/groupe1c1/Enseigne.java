@@ -5,6 +5,7 @@ import groupe1c1.model.ItemPhare;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author user
@@ -26,8 +27,8 @@ public class Enseigne {
 	private void initItemsByCategory(int id) {
 		CategoriePhare cat = CategoriePhare.get(id);
 		List<ItemPhare> itemsList = new ArrayList<>();
-		for (int i = 0; i < 8; i++) {
-				ItemPhare item = new ItemPhare(cat.getName()+" - item "+(i+1),i,12.5 + i);
+		for (int i = 0; i < 16; i++) {
+				ItemPhare item = new ItemPhare(cat.getName()+" - "+(i+1),i,12.5 + i);
 				itemsList.add(item);
 		}
 		items.put(cat,itemsList);
@@ -36,7 +37,7 @@ public class Enseigne {
 		return items.get(CategoriePhare.get(i));
 	}
 
-	public List<String> getCategoryMenu() {
-		return Arrays.stream(CategoriePhare.values()).filter(e->e.canShowCategory()).map(CategoriePhare::getName).collect(Collectors.toList());
+	public Stream<CategoriePhare> getCategoryMenu() {
+		return Arrays.stream(CategoriePhare.values()).filter(e->e.canShowCategory());
 	}
 }
