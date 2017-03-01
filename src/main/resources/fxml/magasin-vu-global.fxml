@@ -13,9 +13,9 @@
    <children>
       <Text layoutX="98.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtres" />
       <Text layoutX="667.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des magasins" />
-      <ScrollPane layoutX="285.0" layoutY="67.0" prefHeight="330.0" prefWidth="993.0">
+      <ScrollPane layoutX="285.0" layoutY="67.0" prefHeight="330.0" prefWidth="913.0">
          <content>
-            <ListView prefHeight="329.0" prefWidth="974.0" />
+            <ListView prefHeight="329.0" prefWidth="894.0" />
          </content>
       </ScrollPane>
       <TextField layoutX="131.0" layoutY="84.0" prefHeight="31.0" prefWidth="123.0" />
