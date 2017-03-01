@@ -20,8 +20,6 @@ public class ItemParser {
 		while ((line = re.readLine())!= null){
 			source += line +"\n";
 		}
-
-
 		JSONObject jsonObject = new JSONObject(source);
 		itemsJson = jsonObject.getJSONArray("items");
 	}

@@ -33,8 +33,8 @@ public class ProduitPhareView {
 			Label itemName = (Label) ((BorderPane) itemBorder.getBottom()).getTop();
 			Button left = (Button)((BorderPane) itemBorder.getBottom()).getLeft();
 			left.setOnMouseClicked(minusButtOnClick);
-			Button right = (Button)((BorderPane) itemBorder.getBottom()).getLeft();
-			right.setOnMouseClicked(event -> System.out.println(event));  //setOnMouseClicked(plusButtOnClick);
+			Button right = (Button)((BorderPane) itemBorder.getBottom()).getRight();
+			right.setOnMouseClicked(plusButtOnClick);  //setOnMouseClicked(plusButtOnClick);
 			itemName.setText(name+"\n"+prix+"€");
 			parent.add(itemBorder,x,y);
 		} catch (IOException e) {

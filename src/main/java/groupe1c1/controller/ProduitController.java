@@ -27,7 +27,6 @@ public class ProduitController {
 
 	@FXML
 	void initialize() {
-		ResourceBundle z = resources;
 		view = new ProduitPhareView(itemsGrid);
 		itemsManager = new ItemsManager();
 		createItemList();
@@ -46,10 +45,10 @@ public class ProduitController {
 	}
 	private javafx.event.EventHandler<MouseEvent> createListener(final ItemPhare item,final boolean add){
 		return new javafx.event.EventHandler<MouseEvent>() {
+
 			@Override
 			public void handle(MouseEvent event) {
-				//clickItem(item,add);
-				System.out.println(item +" : "+add);
+				clickItem(item,add);
 			}
 		};
 	}
