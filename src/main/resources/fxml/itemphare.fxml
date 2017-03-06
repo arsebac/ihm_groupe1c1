@@ -7,9 +7,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane id="item" prefHeight="149.0" prefWidth="104.0" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="itemPane" prefHeight="149.0" prefWidth="104.0" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fx:id="img" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../images/tel.jpg" />
          </image>
@@ -18,19 +18,19 @@
    <bottom>
       <BorderPane prefHeight="48.0" prefWidth="104.0" BorderPane.alignment="CENTER">
          <left>
-            <Button mnemonicParsing="false" text="-" BorderPane.alignment="CENTER" />
+            <Button fx:id="minusB" mnemonicParsing="false" text="-" BorderPane.alignment="CENTER" />
          </left>
          <center>
-            <Label text="0" BorderPane.alignment="CENTER">
+            <Label fx:id="number" text="0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets left="20.0" right="20.0" />
                </BorderPane.margin></Label>
          </center>
          <right>
-            <Button mnemonicParsing="false" text="+" BorderPane.alignment="CENTER" />
+            <Button fx:id="plusB" mnemonicParsing="false" text="+" BorderPane.alignment="CENTER" />
          </right>
          <top>
-            <Label text="Item" BorderPane.alignment="CENTER" />
+            <Label fx:id="name" text="Item" BorderPane.alignment="CENTER" />
          </top>
          <padding>
             <Insets left="30.0" right="30.0" />
