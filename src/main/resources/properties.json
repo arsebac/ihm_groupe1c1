@@ -12,9 +12,6 @@
     {"nom":"Item 4", "prix":23.0,"url":"/images/tel.jpg"},
     {"nom":"Item 5", "prix":23.0,"url":"/images/tel.jpg"},
     {"nom":"Item 3", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 4", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 5", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 6", "prix":23.0,"url":"/images/tel.jpg"}
 
   ]
 }
