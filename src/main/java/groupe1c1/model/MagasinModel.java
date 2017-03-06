@@ -30,9 +30,15 @@ public class MagasinModel {
     }
 
     public List<Magasin> get() {
-        MagasinsDeserializer magasinsDeserializer = new MagasinsDeserializer();
+        //MagasinsDeserializer magasinsDeserializer = new MagasinsDeserializer();
 
-        return magasinsDeserializer.deserialize();
+
+        //return magasinsDeserializer.deserialize();
+        List<Magasin> magasins = new ArrayList<>();
+        magasins.add(tempCreateFakeMagasin());
+        magasins.add(tempCreateFakeMagasin());
+        return magasins;
+
     }
 
 
