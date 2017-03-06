@@ -8,18 +8,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" fx:controller="groupe1c1.controller.MagasinsController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text layoutX="98.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtres" />
       <Text layoutX="667.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des magasins" />
-      <ScrollPane layoutX="285.0" layoutY="67.0" prefHeight="330.0" prefWidth="913.0">
-         <content>
-            <ListView prefHeight="329.0" prefWidth="894.0" />
-         </content>
-      </ScrollPane>
-      <TextField layoutX="131.0" layoutY="84.0" prefHeight="31.0" prefWidth="123.0" />
+      <ListView fx:id="listViewMagasins" prefHeight="330.0" prefWidth="913.0" layoutX="285.0" layoutY="67.0" />
+      <TextField fx:id="textMagasin" layoutX="131.0" layoutY="84.0" prefHeight="31.0" prefWidth="123.0" />
       <Label layoutX="14.0" layoutY="89.0" prefHeight="21.0" prefWidth="98.0" text="Ville / Régions" />
-      <Button layoutX="150.0" layoutY="140.0" mnemonicParsing="false" text="Appliquer" />
+      <Button fx:id="buttonAppliquer" layoutX="150.0" layoutY="140.0" mnemonicParsing="false" onMouseClicked="#appliquerFiltre" text="Appliquer" />
    </children>
 </Pane>
