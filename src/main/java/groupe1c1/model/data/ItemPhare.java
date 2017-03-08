@@ -6,9 +6,9 @@ package groupe1c1.model.data;
  * @date 26/02/2017
  */
 public class ItemPhare {
-	private final String nom;
-	private final String url;
-	private final double prix;
+	protected final String nom;
+	protected final String url;
+	protected final double prix;
 
 	public ItemPhare(String nom, double prix, String url) {
 		this.nom = nom;

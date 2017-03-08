@@ -25,6 +25,7 @@ public class MainApp extends Application {
         log.info("Starting Hello JavaFX and Maven demonstration application");
         VBox parent = new VBox();
         parent.getChildren().add(loadTop());
+        parent.getChildren().add(loadPromo());
         parent.getChildren().add(loadProduitPhares());
         parent.getChildren().add(loadMagasins());
         log.debug("Showing JFX scene");
@@ -36,8 +37,15 @@ public class MainApp extends Application {
         stage.show();
 
     }
+
+    private Node loadPromo() throws IOException {
+        String fxmlFile = "/fxml/promo.fxml";
+        FXMLLoader loader = new FXMLLoader();
+        return loader.load(getClass().getResourceAsStream(fxmlFile));
+    }
+
     private Node loadTop() throws IOException {
-        String fxmlFile = "/fxml/topFinal.fxml";
+        String fxmlFile = "/fxml/haut.fxml";
         FXMLLoader loader = new FXMLLoader();
         return loader.load(getClass().getResourceAsStream(fxmlFile));
     }
