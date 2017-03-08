@@ -1,5 +1,6 @@
 package groupe1c1.model;
 
+import com.google.gson.Gson;
 import groupe1c1.model.data.Magasin;
 import groupe1c1.persistence.json.gson.MagasinsDeserializer;
 
@@ -14,36 +15,16 @@ public class MagasinModel {
     List<Magasin> magasins = new ArrayList<>();
 
     public MagasinModel() {
-        Magasin magasin = tempCreateFakeMagasin();
-        magasins.add(magasin);
-        magasins.add(magasin);
-    }
-
-
-    private Magasin tempCreateFakeMagasin() {
-        String name = "carrefour genas";
-        String imagePath = "titi";
-        String horaire = "du lundi au vendredi de 8 à 19h";
-        String adresse = "centre de genas";
-
-        return new Magasin(name, imagePath, horaire, adresse);
+        MagasinsDeserializer magasinsDeserializer = new MagasinsDeserializer();
+        magasins = magasinsDeserializer.deserialize();
     }
 
     public List<Magasin> get() {
-        //MagasinsDeserializer magasinsDeserializer = new MagasinsDeserializer();
-
-
-        //return magasinsDeserializer.deserialize();
-        List<Magasin> magasins = new ArrayList<>();
-        magasins.add(tempCreateFakeMagasin());
-        magasins.add(tempCreateFakeMagasin());
         return magasins;
-
     }
-
-
-    public void persist(Magasin magasin) {
-        //TODO
+    
+    public void add(Magasin magasin) {
+        //List<Magasin> magasins = new Gson().toJson();
     }
 
 }

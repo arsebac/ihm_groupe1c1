@@ -3,12 +3,8 @@ package groupe1c1.persistence.json.gson;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import groupe1c1.model.data.Magasin;
+import groupe1c1.utils.Reader;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 
@@ -28,19 +24,7 @@ public class MagasinsDeserializer {
     }
 
     private String readFile() {
-        try {
-            ClassLoader classLoader = getClass().getClassLoader();
-            //File file = new File(classLoader.getResource(fileName).getFile());
-
-
-            URL url = getClass().getResource("/persistence/magasin.json");
-            System.out.println(url.getPath());
-            return new String(Files.readAllBytes(Paths.get(url.getPath())));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            return null;
-        }
+        return new Reader().read("persistence/magasin.json");
     }
 
 }
