@@ -2,11 +2,8 @@ package groupe1c1.persistence.json.gson;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import groupe1c1.CreateEnseigne;
 import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.ItemPhare;
-import groupe1c1.model.data.LocatedImage;
-import groupe1c1.model.data.Magasin;
 import org.json.JSONObject;
 
 import java.io.*;

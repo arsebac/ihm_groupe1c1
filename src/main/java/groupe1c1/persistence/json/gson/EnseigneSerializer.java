@@ -1,17 +1,13 @@
 package groupe1c1.persistence.json.gson;
 
 import com.google.gson.Gson;
-import groupe1c1.CreateEnseigne;
 import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.ItemPhare;
-import groupe1c1.model.data.LocatedImage;
-import groupe1c1.model.data.Magasin;
-import javafx.scene.image.Image;
+import groupe1c1.utils.LocatedImage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.*;
-import java.net.URL;
 import java.util.List;
 
 /**

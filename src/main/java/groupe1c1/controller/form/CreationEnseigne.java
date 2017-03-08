@@ -2,8 +2,7 @@ package groupe1c1.controller.form;
 
 import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.ItemPhare;
-import groupe1c1.model.data.LocatedImage;
-import groupe1c1.model.parser.ItemParser;
+import groupe1c1.utils.LocatedImage;
 import groupe1c1.persistence.json.gson.EnseigneDeserializer;
 import groupe1c1.persistence.json.gson.EnseigneSerializer;
 import javafx.collections.FXCollections;
@@ -15,8 +14,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Hasaghi

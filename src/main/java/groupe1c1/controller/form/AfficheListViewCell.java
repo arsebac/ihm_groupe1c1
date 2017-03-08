@@ -1,7 +1,7 @@
 package groupe1c1.controller.form;
 
 import groupe1c1.model.data.Affiche;
-import groupe1c1.model.data.LocatedImage;
+import groupe1c1.utils.LocatedImage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

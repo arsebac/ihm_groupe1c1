@@ -1,20 +1,17 @@
 package groupe1c1.controller.form;
 
-import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.ItemPhare;
-import groupe1c1.model.data.LocatedImage;
+import groupe1c1.utils.LocatedImage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;

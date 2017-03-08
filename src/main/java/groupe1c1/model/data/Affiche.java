@@ -4,7 +4,7 @@ package groupe1c1.model.data;
  * @author Hasaghi
  * @date 06/03/2017
  */
-public class Affiche {
+public class Affiche{
 	private String path;
 	private String name;
 

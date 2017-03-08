@@ -1,4 +1,4 @@
-package groupe1c1.model.data;
+package groupe1c1.utils;
 
 import groupe1c1.CreateEnseigne;
 import javafx.scene.image.Image;
