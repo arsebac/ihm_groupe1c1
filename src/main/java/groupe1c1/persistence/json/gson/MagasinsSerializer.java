@@ -3,6 +3,11 @@ package groupe1c1.persistence.json.gson;
 import com.google.gson.Gson;
 import groupe1c1.model.data.Magasin;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 /**
@@ -10,12 +15,16 @@ import java.util.List;
  */
 public class MagasinsSerializer {
 
-    private Gson gson = new Gson();
-
     public void serialize(List<Magasin> magasins) {
-        String magasinJson = gson.toJson(magasins);
-        System.out.println(magasinJson);
-        //PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("persistence/magasin.json").getFile());
+        try {
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get(file.getPath()));
+            String toWrite = new Gson().toJson(magasins);
+            writer.write(toWrite);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
