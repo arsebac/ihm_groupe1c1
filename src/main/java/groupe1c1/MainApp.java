@@ -42,7 +42,7 @@ public class MainApp extends Application {
         return loader.load(getClass().getResourceAsStream(fxmlFile));
     }
     private Node loadProduitPhares() throws IOException {
-        String fxmlFile = "/fxml/produit.fxml";
+        String fxmlFile = "/fxml/produitContainer.fxml";
         FXMLLoader loader = new FXMLLoader();
         return loader.load(getClass().getResourceAsStream(fxmlFile));
     }

@@ -59,4 +59,8 @@ public class ItemPhare {
 		result = 31 * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
+
+	public String renderText() {
+		return nom+"\n"+prix+"€";
+	}
 }

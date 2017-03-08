@@ -39,11 +39,11 @@ public class ProduitController {
 	 * Affiche la grille de produit phares
 	 */
 	private void createItemList() {
-		int sizeGrid = 6;
+		int sizeGrid = 7;
 		List<ItemPhare> phareList = itemsManager.getItemPhare();
 		for (int i = 0; i < phareList.size(); i++) {
 			ItemPhare item = phareList.get(i);
-			drawItem(item.getName(), item.getUrl(), item.getCost(), i % sizeGrid, i / sizeGrid,createListener(item,false),createListener(item,true));
+			drawItem(item, i % sizeGrid, i / sizeGrid);
 		}
 	}
 	private javafx.event.EventHandler<MouseEvent> createListener(final ItemPhare item,final boolean add){
@@ -59,17 +59,17 @@ public class ProduitController {
 		System.out.println(item +" : "+add);
 	}
 
-	public void drawItem(String name, String url, double prix, int x, int y, EventHandler<MouseEvent> minusButtOnClick, EventHandler<MouseEvent> plusButtOnClick){
+	public void drawItem(ItemPhare item ,int x, int y){
 		try {
 			BorderPane itemBorder = loadFxml();
 			ImageView image = (ImageView) itemBorder.getCenter();
-			image.setImage(new Image(url));
+			image.setImage(new Image(item.getUrl()));
 			Label itemName = (Label) ((BorderPane) itemBorder.getBottom()).getTop();
 			Button left = (Button)((BorderPane) itemBorder.getBottom()).getLeft();
-			left.setOnMouseClicked(minusButtOnClick);
+			left.setOnMouseClicked(createListener(item,false));
 			Button right = (Button)((BorderPane) itemBorder.getBottom()).getRight();
-			right.setOnMouseClicked(plusButtOnClick);
-			itemName.setText(name+"\n"+prix+"€");
+			right.setOnMouseClicked(createListener(item,true));
+			itemName.setText(item.renderText());
 			itemsGrid.add(itemBorder,x,y);
 		} catch (IOException e) {
 			e.printStackTrace();
