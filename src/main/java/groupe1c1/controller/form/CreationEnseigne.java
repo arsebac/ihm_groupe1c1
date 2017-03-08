@@ -4,6 +4,7 @@ import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.ItemPhare;
 import groupe1c1.model.data.LocatedImage;
 import groupe1c1.model.parser.ItemParser;
+import groupe1c1.persistence.json.gson.EnseigneDeserializer;
 import groupe1c1.persistence.json.gson.EnseigneSerializer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,17 +41,27 @@ public class CreationEnseigne {
 	// ------------ Partie sur la liste d'affiches ------------------
 	@FXML
 	void addButton(MouseEvent event) {
-		observableList.add(new Affiche("produit "+ observableList.size(),"/images/produit1.png"));
+		Affiche newAffiche = new Affiche("Nouveau produit","/images/produit1.png");
+		observableList.add(newAffiche);
+		updateAffiche(newAffiche);
 	}
 	@FXML
 	void modifyButton(MouseEvent event) {
 		System.out.println(listProd.getSelectionModel().getSelectedItem() + "sélectionné");
+		updateAffiche(listProd.getSelectionModel().getSelectedItem());
+	}
+	private void updateAffiche(Affiche afficheToModify){
+		try {
+			new ModifyAffiche(this,afficheToModify);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	@FXML
 	void delButton(MouseEvent event) {
 		observableList.remove(listProd.getSelectionModel().getSelectedItem());
 	}
-	public void updateCounter(){
+	public void updateAfficheCounter(){
 		prodText.setText(observableList.size()+" produit"+(observableList.size() > 1 ? "s":""));
 	}
 
@@ -61,7 +72,7 @@ public class CreationEnseigne {
 		System.out.println("logo changement");
 
 	}
-	void updateImage(LocatedImage img){
+	private void updateImage(LocatedImage img){
 		logoImg.setImage(img);
 	}
 
@@ -83,13 +94,13 @@ public class CreationEnseigne {
 
 	@FXML
 	public void initialize() throws IOException {
+		EnseigneDeserializer model = new EnseigneDeserializer();
+		LocatedImage logo = LocatedImage.create(model.getLogoPath());
+		updateImage(logo);
 		observableList = FXCollections.observableArrayList();
+		observableList.addAll(model.getAffiches());
 		phareList =  FXCollections.observableArrayList();
-		ItemParser parser = new ItemParser("/properties.json");
-		for (int i = 0; i < parser.itemSize(); i++) {
-			phareList.add(parser.getItem(i));
-		}
-		observableList.addAll(createFake());
+		phareList.addAll(model.getItems());
 		listProd.setItems(observableList);
 		listPhare.setItems(phareList);
 		listProd.setCellFactory(magasinListView -> new AfficheListViewCell(this));
@@ -98,26 +109,20 @@ public class CreationEnseigne {
 
 	}
 
-	private List<Affiche> createFake() {
-		List<Affiche> affiches = new ArrayList<>();
-		for (int i = 0; i < 5; i++) {
-			affiches.add(new Affiche("Produit "+i,"/images/produit"+(1+i%3)+".jpg"));
-		}
-		return affiches;
-	}
-
-
-
-
-
 	public void addProdButton(MouseEvent mouseEvent) {
-		if(phareList.size() < 13)	phareList.add(new ItemPhare("produit "+ phareList.size(),13,"/images/tel.jpg"));
+		if(phareList.size() < 12)	phareList.add(new ItemPhare("produit "+ phareList.size(),13,"/images/tel.jpg"));
 		else System.out.println("Maximum atteint !");
 
 	}
 
 	public void modifyProdButton(MouseEvent mouseEvent) {
-		System.out.println(listPhare.getSelectionModel().getSelectedItem()+" sélectionné");
+		ItemPhare itemToModify = listPhare.getSelectionModel().getSelectedItem();
+		try {
+			new ModifyItem(this,itemToModify);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	public void ProddelButton(MouseEvent mouseEvent) {
@@ -127,5 +132,17 @@ public class CreationEnseigne {
 	}
 	public void updateProdCounter(){
 		sprodText.setText(phareList.size()+" produit"+(phareList.size() > 1 ? "s":"")+" sur 12");
+	}
+
+	public void updateItem(ItemPhare oldItem, ItemPhare newItem) {
+		int place = phareList.indexOf(oldItem);
+		phareList.remove(oldItem);
+		phareList.add(place, newItem);
+	}
+
+	public void updateAffiche(Affiche item, Affiche newItem) {
+		int place = observableList.indexOf(item);
+		observableList.remove(item);
+		observableList.add(place, newItem);
 	}
 }

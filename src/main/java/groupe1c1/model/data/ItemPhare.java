@@ -36,4 +36,27 @@ public class ItemPhare {
 				", prix=" + prix +
 				'}';
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		ItemPhare itemPhare = (ItemPhare) o;
+
+		if (Double.compare(itemPhare.prix, prix) != 0) return false;
+		if (nom != null ? !nom.equals(itemPhare.nom) : itemPhare.nom != null) return false;
+		return url != null ? url.equals(itemPhare.url) : itemPhare.url == null;
+	}
+
+	@Override
+	public int hashCode() {
+		int result;
+		long temp;
+		result = nom != null ? nom.hashCode() : 0;
+		result = 31 * result + (url != null ? url.hashCode() : 0);
+		temp = Double.doubleToLongBits(prix);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
 }

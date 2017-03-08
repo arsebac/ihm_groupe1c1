@@ -1,17 +1,26 @@
-{
-  "items":[
-    {"nom":"Item 1", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 2", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 3", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 4", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 5", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 3", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 4", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 5", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 3", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 4", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 5", "prix":23.0,"url":"/images/tel.jpg"},
-    {"nom":"Item 3", "prix":23.0,"url":"/images/tel.jpg"},
-
+{"affiches":
+  [
+    {"path":"/images/produit1.jpg","name":"Produit 0"},
+    {"path":"/images/produit2.jpg","name":"Produit 1"},
+    {"path":"/images/produit3.jpg","name":"Produit 2"},
+    {"path":"/images/produit1.jpg","name":"Produit 3"},
+    {"path":"/images/produit2.jpg","name":"Produit 4"},
+    {"path":"/images/produit1.png","name":"produit 5"},
+    {"path":"/images/produit1.png","name":"produit 6"}
+],
+  "logo":"/images/logo.jpg",
+  "items":
+    [
+      {"prix":23,"nom":"Item 2","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 3","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 4","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 5","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 3","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 4","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 5","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 4","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 5","url":"/images/tel.jpg"},
+      {"prix":23,"nom":"Item 3","url":"/images/tel.jpg"},
+      {"prix":13,"nom":"produit 12","url":"/images/tel.jpg"}
   ]
 }

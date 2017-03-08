@@ -33,9 +33,7 @@
                </HBox.margin>
             </Button>
             <ImageView fx:id="logoImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="/images/logo.jpg" />
-               </image></ImageView>
+              </ImageView>
          </children>
       </HBox>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Produits mis en avant" textAlignment="CENTER" wrappingWidth="1210.0">

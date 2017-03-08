@@ -1,17 +1,13 @@
 package groupe1c1.controller.form;
 
-import groupe1c1.CreateEnseigne;
 import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.LocatedImage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -41,7 +37,7 @@ public class AfficheListViewCell extends ListCell<Affiche> {
 	@Override
 	protected void updateItem(Affiche item, boolean empty) {
 		super.updateItem(item, empty);
-		enseigne.updateCounter();
+		enseigne.updateAfficheCounter();
 		if (empty || item == null) {
 			setGraphicAndText(null, null);
 		} else {

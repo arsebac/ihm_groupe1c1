@@ -23,7 +23,7 @@ public class CreateEnseigne extends Application {
 		VBox parent = loader.load(getClass().getResourceAsStream(fxmlFile));
 		Scene scene = new Scene(parent, 1210, 720);
 		scene.getStylesheets().add("/styles/styles.css");
-		primaryStage.setTitle("Hello JavaFX and Maven");
+		primaryStage.setTitle("Création d'une enseigne");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
