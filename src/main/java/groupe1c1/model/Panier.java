@@ -2,7 +2,6 @@ package groupe1c1.model;
 
 import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.ItemPhare;
-import groupe1c1.model.data.Magasin;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +12,6 @@ import java.util.Map;
  */
 public class Panier {
 	private static Panier ourInstance = new Panier();
-
 	private static Map<Affiche, Integer> affiches;
 	private static Map<ItemPhare, Integer> items;
 	public static Panier getInstance() {
@@ -41,7 +39,6 @@ public class Panier {
 			items.put(item,1);
 			return 1;
 		}
-
 	}
 
 	public static int delItem(ItemPhare item) {
@@ -54,6 +51,18 @@ public class Panier {
 			}
 			return newCount;
 		}
-		return -1;
+		return 0;
+	}
+	public static void debug(){
+		System.out.println(affiches);
+		System.out.println(items);
+	}
+	public static double getTotalPrice(){
+		int total = 0;
+		for (Map.Entry<ItemPhare,Integer> dad:
+				items.entrySet()) {
+			total += dad.getKey().getCost() * dad.getValue();
+		}
+		return total;
 	}
 }

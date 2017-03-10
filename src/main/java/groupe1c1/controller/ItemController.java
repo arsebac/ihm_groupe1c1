@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 
 /**
  * @author user
@@ -28,11 +27,11 @@ public class ItemController {
 
 	public void draw(ItemPhare item){
 		img.setImage(new Image(item.getUrl()));
-		//left.setOnMouseClicked(createListener(item,false));
-		//right.setOnMouseClicked(createListener(item,true));
 		name.setText(item.renderText());
-		plusB.setOnMouseClicked(e-> Panier.addItem(item));
-		minusB.setOnMouseClicked(e-> Panier.delItem(item));
+		plusB.setOnMouseClicked(e-> updateCount(Panier.addItem(item)));
+		minusB.setOnMouseClicked(e-> updateCount(Panier.delItem(item)));
 	}
-
+	private void updateCount(int i) {
+		number.setText(String.valueOf(i));
+	}
 }

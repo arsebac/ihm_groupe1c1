@@ -1,5 +1,7 @@
 package groupe1c1;
 
+import groupe1c1.controller.PromosController;
+import groupe1c1.persistence.json.gson.EnseigneDeserializer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -21,13 +23,15 @@ public class MainApp extends Application {
     }
 
     public void start(Stage stage) throws Exception {
-
+        EnseigneDeserializer ens = new EnseigneDeserializer();
         log.info("Starting Hello JavaFX and Maven demonstration application");
         VBox parent = new VBox();
-        parent.getChildren().add(loadTop());
-        parent.getChildren().add(loadPromo());
+        PromosController promoContro = new PromosController(ens);
+        parent.getChildren().add(loadTop(promoContro));
+
+        parent.getChildren().add(loadPromo(promoContro));
         parent.getChildren().add(loadProduitPhares());
-        parent.getChildren().add(loadMagasins());
+        //parent.getChildren().add(loadMagasins());
         log.debug("Showing JFX scene");
 	    ScrollPane scrollPane = new ScrollPane(parent);
 	    Scene scene = new Scene(scrollPane, 1210, 720);
@@ -35,18 +39,22 @@ public class MainApp extends Application {
         stage.setTitle("Hello JavaFX and Maven");
         stage.setScene(scene);
         stage.show();
+        promoContro.update();
 
     }
 
-    private Node loadPromo() throws IOException {
+    private Node loadPromo(PromosController promoContro) throws IOException {
         String fxmlFile = "/fxml/promo.fxml";
         FXMLLoader loader = new FXMLLoader();
+        loader.setController(promoContro);
+        promoContro.update();
         return loader.load(getClass().getResourceAsStream(fxmlFile));
     }
 
-    private Node loadTop() throws IOException {
+    private Node loadTop(PromosController promoContro) throws IOException {
         String fxmlFile = "/fxml/haut.fxml";
         FXMLLoader loader = new FXMLLoader();
+        loader.setController(promoContro);
         return loader.load(getClass().getResourceAsStream(fxmlFile));
     }
     private Node loadProduitPhares() throws IOException {
