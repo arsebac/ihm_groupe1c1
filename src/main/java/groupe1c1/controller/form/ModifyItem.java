@@ -39,7 +39,7 @@ public class ModifyItem {
 
 	@FXML
 	void save(MouseEvent event) {
-		double prix = Double.parseDouble(price.getText());
+		double prix = (price.getText().length() > 0 ? Double.parseDouble(price.getText()) : 0.0);
 		String itemName = name.getText();
 		String path = ((LocatedImage) image.getImage()).getUrl();
 		ItemPhare newItem = new ItemPhare(itemName,prix,path);
