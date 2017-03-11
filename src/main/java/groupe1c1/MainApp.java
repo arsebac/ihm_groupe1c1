@@ -42,7 +42,7 @@ public class MainApp extends Application {
         log.debug("Showing JFX scene");
 	    ScrollPane scrollPane = new ScrollPane(parent);
 	    Scene scene = new Scene(scrollPane, 1210, 720);
-        //scene.getStylesheets().add("/styles/styles.css");
+        scene.getStylesheets().add("/styles/theme1.css");
         stage.setTitle("Hello JavaFX and Maven");
         stage.setScene(scene);
         stage.show();
