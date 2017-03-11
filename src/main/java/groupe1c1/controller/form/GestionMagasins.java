@@ -56,7 +56,8 @@ public class GestionMagasins {
         String filter = filterTextField.getText();
 
         if (filter.matches("\\s*")) {
-            observableList.addAll(magasins);
+            if (observableList.size() != magasins.size())
+                observableList.addAll(magasins);
         } else {
             observableList.removeAll(observableList);
             for (Magasin magasin : magasins) {
@@ -71,9 +72,11 @@ public class GestionMagasins {
     void deleteMagasin(ActionEvent event) {
         Magasin selectedMagasin = magasinsListView.getSelectionModel().getSelectedItem();
 
-        observableList.remove(selectedMagasin);
-        magasins.remove(selectedMagasin);
-        toObserve.remove(selectedMagasin);
+        if (selectedMagasin != null) {
+            observableList.remove(selectedMagasin);
+            magasins.remove(selectedMagasin);
+            toObserve.remove(selectedMagasin);
+        }
     }
 
     @FXML
