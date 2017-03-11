@@ -1,6 +1,7 @@
 package groupe1c1;
 
 import groupe1c1.controller.PromosController;
+import groupe1c1.controller.TopController;
 import groupe1c1.persistence.json.gson.EnseigneDeserializer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -26,9 +27,10 @@ public class MainApp extends Application {
         EnseigneDeserializer ens = new EnseigneDeserializer();
         log.info("Starting Hello JavaFX and Maven demonstration application");
         VBox parent = new VBox();
-        PromosController promoContro = new PromosController(ens);
-        parent.getChildren().add(loadTop(promoContro));
+        TopController tp = new TopController();
+        parent.getChildren().add(loadTop(tp));
 
+        PromosController promoContro = new PromosController(ens);
         parent.getChildren().add(loadPromo(promoContro));
         parent.getChildren().add(loadProduitPhares());
         //parent.getChildren().add(loadMagasins());
@@ -40,7 +42,6 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.show();
         promoContro.update();
-
     }
 
     private Node loadPromo(PromosController promoContro) throws IOException {
@@ -51,10 +52,9 @@ public class MainApp extends Application {
         return loader.load(getClass().getResourceAsStream(fxmlFile));
     }
 
-    private Node loadTop(PromosController promoContro) throws IOException {
+    private Node loadTop(TopController tp) throws IOException {
         String fxmlFile = "/fxml/haut.fxml";
         FXMLLoader loader = new FXMLLoader();
-        loader.setController(promoContro);
         return loader.load(getClass().getResourceAsStream(fxmlFile));
     }
     private Node loadProduitPhares() throws IOException {

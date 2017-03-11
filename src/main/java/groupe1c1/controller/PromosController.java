@@ -49,9 +49,6 @@ public class PromosController {
 		promos.left();
 		update();
 	}
-	@FXML void panier(MouseEvent event) {
-		System.out.println(Panier.getTotalPrice());
-	}
 	@FXML void rightButton(MouseEvent event) {
 
 		promos.right();

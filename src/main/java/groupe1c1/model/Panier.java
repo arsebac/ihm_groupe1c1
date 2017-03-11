@@ -5,6 +5,7 @@ import groupe1c1.model.data.ItemPhare;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Desla on 01/03/2017.
@@ -59,10 +60,17 @@ public class Panier {
 	}
 	public static double getTotalPrice(){
 		int total = 0;
-		for (Map.Entry<ItemPhare,Integer> dad:
+		for (Map.Entry<ItemPhare,Integer> item:
 				items.entrySet()) {
-			total += dad.getKey().getCost() * dad.getValue();
+			total += item.getKey().getCost() * item.getValue();
 		}
 		return total;
+	}
+	public static Set<Map.Entry<ItemPhare, Integer>> getItems(){
+		return items.entrySet();
+	}
+
+	public static String getItemsPrice(ItemPhare item) {
+		return (item.getCost() * items.get(item)) + "€";
 	}
 }

@@ -29,6 +29,6 @@ public class Promos {
 		if(start > 0) start --;
 	}
 	public void right() {
-		if(start <affiches.size() - 1) start ++;
+		if(start + 4<affiches.size()) start ++;
 	}
 }

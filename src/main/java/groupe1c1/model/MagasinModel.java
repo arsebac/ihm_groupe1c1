@@ -27,4 +27,8 @@ public class MagasinModel {
         //List<Magasin> magasins = new Gson().toJson();
     }
 
+    public static void main(String[] args) {
+        System.out.println(new MagasinModel().get());
+    }
+
 }
