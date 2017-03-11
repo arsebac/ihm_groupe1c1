@@ -1,5 +1,6 @@
 package groupe1c1.controller;
 
+import groupe1c1.MainApp;
 import groupe1c1.model.MagasinModel;
 import groupe1c1.model.Panier;
 import groupe1c1.model.data.ItemPhare;
@@ -43,6 +44,7 @@ public class TopController {
 
 	@FXML
 	private ListView<Magasin> magasinsListView;
+	private Stage mainStage = null;
 
 	@FXML
 	void finaliseCommand(MouseEvent event) {
@@ -54,6 +56,10 @@ public class TopController {
 
 	}
 
+	@FXML
+	void refresh(MouseEvent event) throws Exception {
+		new MainApp().start(mainStage);
+	}
 	@FXML
 	void commandButton(MouseEvent event) throws IOException {
 		panierStage.close();
@@ -108,4 +114,7 @@ public class TopController {
 
 	}
 
+	public void addStage(Stage stage) {
+		this.mainStage = stage;
+	}
 }

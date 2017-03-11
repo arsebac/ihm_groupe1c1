@@ -41,6 +41,7 @@ public class MainApp extends Application {
         stage.setTitle("Hello JavaFX and Maven");
         stage.setScene(scene);
         stage.show();
+        tp.addStage(stage);
         promoContro.update();
     }
 
@@ -55,6 +56,7 @@ public class MainApp extends Application {
     private Node loadTop(TopController tp) throws IOException {
         String fxmlFile = "/fxml/haut.fxml";
         FXMLLoader loader = new FXMLLoader();
+        loader.setController(tp);
         return loader.load(getClass().getResourceAsStream(fxmlFile));
     }
     private Node loadProduitPhares() throws IOException {
