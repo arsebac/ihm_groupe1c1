@@ -24,9 +24,6 @@ public class MagasinModel {
     public List<Magasin> get() {
         return magasins;
     }
-    
-    public void add(Magasin magasin) {
-        //List<Magasin> magasins = new Gson().toJson();
-    }
+
 
 }
