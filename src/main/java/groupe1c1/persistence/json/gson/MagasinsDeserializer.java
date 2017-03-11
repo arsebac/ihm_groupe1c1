@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import groupe1c1.model.data.Magasin;
 import groupe1c1.utils.Reader;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -13,18 +14,14 @@ import java.util.List;
  */
 public class MagasinsDeserializer {
 
-    public List<Magasin> deserialize() {
-        String jsonMagasin = readFile();
+    public List<Magasin> deserialize() throws IOException {
+        String jsonMagasin = new Reader().read("/magasin.json");
 
         if (jsonMagasin != null) {
             Gson gson = new Gson();
             return gson.fromJson(jsonMagasin, new TypeToken<List<Magasin>>(){}.getType());
         }
         return null;
-    }
-
-    private String readFile() {
-        return new Reader().read("persistence/magasin.json");
     }
 
 }

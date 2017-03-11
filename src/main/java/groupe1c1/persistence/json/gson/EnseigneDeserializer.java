@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.ItemPhare;
+import groupe1c1.utils.Reader;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -19,14 +20,7 @@ public class EnseigneDeserializer {
 	private Gson gson;
 
 	public EnseigneDeserializer() throws IOException {
-
-		InputStream is = getClass().getResourceAsStream(FILENAME);
-		BufferedReader re = new BufferedReader(new InputStreamReader(is));
-		String source = "";
-		String line;
-		while ((line = re.readLine())!= null){
-			source += line +"\n";
-		}
+		String source = new Reader().read(FILENAME);
 		data = new JSONObject(source);
 		gson = new Gson();
 	}

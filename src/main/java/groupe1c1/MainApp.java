@@ -33,7 +33,7 @@ public class MainApp extends Application {
         PromosController promoContro = new PromosController(ens);
         parent.getChildren().add(loadPromo(promoContro));
         parent.getChildren().add(loadProduitPhares());
-        //parent.getChildren().add(loadMagasins());
+        parent.getChildren().add(loadMagasins());
         log.debug("Showing JFX scene");
 	    ScrollPane scrollPane = new ScrollPane(parent);
 	    Scene scene = new Scene(scrollPane, 1210, 720);

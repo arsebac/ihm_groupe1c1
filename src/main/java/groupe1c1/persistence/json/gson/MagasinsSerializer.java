@@ -16,15 +16,9 @@ import java.util.List;
 public class MagasinsSerializer {
 
     public void serialize(List<Magasin> magasins) {
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("persistence/magasin.json").getFile());
-        try {
-            BufferedWriter writer = Files.newBufferedWriter(Paths.get(file.getPath()));
-            String toWrite = new Gson().toJson(magasins);
-            writer.write(toWrite);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Gson gson = new Gson();
+
+//        System.out.println(gson.toJson(magasins));
     }
 
 }

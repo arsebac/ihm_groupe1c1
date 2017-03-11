@@ -1,7 +1,6 @@
 package groupe1c1.utils;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -10,23 +9,16 @@ import java.nio.file.Paths;
  */
 public class Reader {
 
-    public String read(String path) {
-        String toReturn = "";
-        ClassLoader classLoader = getClass().getClassLoader();
-        String pathFile = classLoader.getResource(path).getFile();
-        if (pathFile != null) {
-            File file = new File(pathFile);
-            toReturn = read(file);
-        }
-        return toReturn;
-    }
+    public String read(String path) throws IOException {
+        InputStream is = getClass().getResourceAsStream(path);
+        BufferedReader re = new BufferedReader(new InputStreamReader(is));
+        String source = "";
+        String line;
 
-    private String read(File file) {
-        try {
-            return new String(Files.readAllBytes(Paths.get(file.getPath())));
-        } catch (IOException e) {
-            return "";
+        while ((line = re.readLine())!= null){
+            source += line +"\n";
         }
+        return source;
     }
 
 }

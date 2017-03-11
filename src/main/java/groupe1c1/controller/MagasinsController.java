@@ -11,6 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class MagasinsController {
     private ObservableList<Magasin> observableList;
 
     @FXML
-    public void initialize() {
+    public void initialize() throws IOException {
         MagasinModel magasinModel = new MagasinModel();
 
         magasins = magasinModel.get();
