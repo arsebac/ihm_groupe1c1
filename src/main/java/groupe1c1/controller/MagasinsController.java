@@ -36,8 +36,7 @@ public class MagasinsController {
 
         magasins = magasinModel.get();
         toObserve = new ArrayList<>(magasins);
-        MagasinsSerializer magasinsSerializer = new MagasinsSerializer();
-        magasinsSerializer.serialize(magasins);
+        observableList = createObservableListMagasin(toObserve);
         observableList = createObservableListMagasin(toObserve);
         listViewMagasins.setItems(observableList);
         listViewMagasins.setCellFactory(magasinListView -> new MagasinListViewCell());
@@ -60,7 +59,7 @@ public class MagasinsController {
         } else {
             observableList.removeAll(observableList);
             for (Magasin magasin : magasins) {
-                if (magasin.getAdresse().contains(filter) || magasin.getName().matches(filter)) {
+                if (magasin.getAdresse().contains(filter) || magasin.getName().contains(filter)) {
                     observableList.add(magasin);
                 }
             }

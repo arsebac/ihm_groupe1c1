@@ -5,9 +5,14 @@ package groupe1c1;/**
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import jdk.internal.util.xml.impl.Input;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class CreateEnseigne extends Application {
 
@@ -21,10 +26,17 @@ public class CreateEnseigne extends Application {
 		String fxmlFile = "/fxml/creerEnseigne.fxml";
 		FXMLLoader loader = new FXMLLoader();
 		VBox parent = loader.load(getClass().getResourceAsStream(fxmlFile));
-		Scene scene = new Scene(parent, 1210, 720);
+		parent.getChildren().add(loadGestionMagasin());
+		Scene scene = new Scene(parent, 1210, 1032);
 		scene.getStylesheets().add("/styles/styles.css");
 		primaryStage.setTitle("Création d'une enseigne");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+	}
+
+	private Node loadGestionMagasin() throws IOException {
+		String fxmlFile = "/fxml/gestion-magasins.fxml";
+		FXMLLoader loader = new FXMLLoader();
+		return loader.load(getClass().getResourceAsStream(fxmlFile));
 	}
 }
