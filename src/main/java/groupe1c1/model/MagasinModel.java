@@ -15,8 +15,8 @@ public class MagasinModel {
     List<Magasin> magasins = new ArrayList<>();
 
     public MagasinModel() {
-        MagasinsDeserializer magasinsDeserializer = new MagasinsDeserializer();
-        magasins = magasinsDeserializer.deserialize();
+       // MagasinsDeserializer magasinsDeserializer = new MagasinsDeserializer();
+        //magasins = magasinsDeserializer.deserialize();
     }
 
     private Magasin tempCreateMagasin() {
