@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -51,11 +52,12 @@ public class MagasinsController {
 
 
     @FXML
-    void appliquerFiltre(MouseEvent event) {
+    void appliquerFiltre(KeyEvent event) {
         String filter = textMagasin.getText();
 
         if (filter.matches("\\s*")) {
-            observableList.addAll(magasins);
+            if (observableList.size() != magasins.size())
+                observableList.addAll(magasins);
         } else {
             observableList.removeAll(observableList);
             for (Magasin magasin : magasins) {
