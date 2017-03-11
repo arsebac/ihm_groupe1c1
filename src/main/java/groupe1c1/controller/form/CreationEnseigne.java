@@ -2,9 +2,9 @@ package groupe1c1.controller.form;
 
 import groupe1c1.model.data.Affiche;
 import groupe1c1.model.data.ItemPhare;
-import groupe1c1.utils.LocatedImage;
 import groupe1c1.persistence.json.gson.EnseigneDeserializer;
 import groupe1c1.persistence.json.gson.EnseigneSerializer;
+import groupe1c1.utils.LocatedImage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -45,7 +45,7 @@ public class CreationEnseigne {
 	@FXML
 	void modifyButton(MouseEvent event) {
 		System.out.println(listProd.getSelectionModel().getSelectedItem() + "sélectionné");
-		updateAffiche(listProd.getSelectionModel().getSelectedItem());
+		if(listProd.getSelectionModel().getSelectedItem()!=null)updateAffiche(listProd.getSelectionModel().getSelectedItem());
 	}
 	private void updateAffiche(Affiche afficheToModify){
 		try {
@@ -114,6 +114,7 @@ public class CreationEnseigne {
 
 	public void modifyProdButton(MouseEvent mouseEvent) {
 		ItemPhare itemToModify = listPhare.getSelectionModel().getSelectedItem();
+		if(listPhare.getSelectionModel().getSelectedItem()==null) return;
 		try {
 			new ModifyItem(this,itemToModify);
 		} catch (IOException e) {
