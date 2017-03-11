@@ -20,16 +20,25 @@ public class MagasinListViewCell extends ListCell<Magasin> {
     private FXMLLoader fxmlLoader;
 
     @FXML
+    private ImageView image;
+
+    @FXML
     private Text name;
 
     @FXML
-    private ImageView image;
+    private Text centreCommercial;
 
     @FXML
     private Text adresse;
 
     @FXML
-    private Text horaire;
+    private Text telephone;
+
+    @FXML
+    private Text mail;
+
+    @FXML
+    private Text siteWeb;
 
     @FXML
     private Pane pane;
@@ -59,7 +68,10 @@ public class MagasinListViewCell extends ListCell<Magasin> {
     private void setAttribute(Magasin magasin) {
         name.setText(magasin.getName());
         adresse.setText(magasin.getAdresse());
-        horaire.setText(magasin.getHoraires());
+        centreCommercial.setText(magasin.getCentreCommercial());
+        telephone.setText(magasin.getTelephone());
+        mail.setText(magasin.getMail());
+        siteWeb.setText(magasin.getSiteWeb());
         image.setImage(new Image("/images/magasin.png"));
     }
 
