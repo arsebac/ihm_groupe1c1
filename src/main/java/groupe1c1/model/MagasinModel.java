@@ -19,7 +19,25 @@ public class MagasinModel {
         magasins = magasinsDeserializer.deserialize();
     }
 
+    private Magasin tempCreateMagasin() {
+        Magasin magasin = new Magasin(
+                "Carrefour nice",
+                "pas encore utiliser",
+                "Centre commercial de nice",
+                "random adresse",
+                "04 78 98 22 41",
+                "carrefour.nice@gmail.com",
+                "carrefournice.fr"
+        );
+
+        return magasin;
+    }
+
     public List<Magasin> get() {
+        List<Magasin> magasins = new ArrayList<>();
+
+        magasins.add(tempCreateMagasin());
+        magasins.add(tempCreateMagasin());
         return magasins;
     }
     
