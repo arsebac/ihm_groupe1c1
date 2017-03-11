@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="119.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ImageView fx:id="image" fitHeight="75.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+        <Text fx:id="name" layoutX="114.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du magasin">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font></Text>
+        <Label layoutX="114.0" layoutY="62.0" text="Adresse :">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="114.0" layoutY="85.0" text="Centre commercial :">
+            <font>
+                <Font name="System Bold" size="9.0" />
+            </font>
+        </Label>
+        <Text id="centreCommercial" fx:id="centreCommercial" layoutX="202.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple centre commercial" wrappingWidth="187.2446241825819">
+         <font>
+            <Font size="9.0" />
+         </font></Text>
+        <Text id="adresse" fx:id="adresse" layoutX="187.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple d'adresse" />
+    </children>
+</Pane>
