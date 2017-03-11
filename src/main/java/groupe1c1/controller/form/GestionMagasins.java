@@ -47,8 +47,8 @@ public class GestionMagasins {
     }
 
     @FXML
-    void addMagasin(ActionEvent event) {
-
+    void addMagasin(ActionEvent event) throws IOException {
+        new ModifyAddMagasin(null);
     }
 
     @FXML
@@ -77,9 +77,13 @@ public class GestionMagasins {
     }
 
     @FXML
-    void modifyMagasin(ActionEvent event) {
-
+    void modifyMagasin(ActionEvent event) throws IOException {
+        Magasin selectedMagasin = magasinsListView.getSelectionModel().getSelectedItem();
+        if (selectedMagasin != null)
+            new ModifyAddMagasin(selectedMagasin);
     }
+
+
 
 }
 
