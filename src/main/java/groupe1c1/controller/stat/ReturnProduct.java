@@ -35,7 +35,7 @@ public class ReturnProduct {
 			serie.setName(entry.getKey());
 			for (Map.Entry<Integer, Integer> graph :
 					entry.getValue().entrySet()) {
-				serie.getData().add(new XYChart.Data<>(graph.getKey(),graph.getValue(),));
+				serie.getData().add(new XYChart.Data<>(graph.getKey(),graph.getValue()));
 				System.out.println(graph);
 			}
 			returnProduct.getData().add(serie);
