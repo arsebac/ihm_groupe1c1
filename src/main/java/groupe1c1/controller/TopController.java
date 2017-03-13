@@ -1,5 +1,6 @@
 package groupe1c1.controller;
 
+import groupe1c1.ClientEnseigne;
 import groupe1c1.MainApp;
 import groupe1c1.model.MagasinModel;
 import groupe1c1.model.Panier;
@@ -59,8 +60,9 @@ public class TopController {
 
 	@FXML
 	void refresh(MouseEvent event) throws Exception {
-		new MainApp().start(mainStage);
+		new ClientEnseigne(mainStage);
 	}
+
 	@FXML
 	void commandButton(MouseEvent event) throws IOException {
 		panierStage.close();

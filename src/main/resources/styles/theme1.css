@@ -1,34 +1,34 @@
-/*.label-listView-magasin {*/
-    /*-fx-font-size: 15;*/
-    /*-fx-font-weight: bold;*/
-    /*-fx-text-fill: dimgrey;*/
+.label-listView-magasin {
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-text-fill: dimgrey;
 
-/*}*/
+}
 
-/*.title-section {*/
-    /*-fx-font-size: 35;*/
-    /*-fx-font-weight: bold;*/
-    /*-fx-fill-width: true;*/
-/*}*/
+.title-section {
+    -fx-font-size: 35;
+    -fx-font-weight: bold;
+    -fx-fill-width: true;
+}
 
-/*.button-amount-selector {*/
-    /*-fx-text-fill: white, 25;*/
-    /*-fx-border-color: dimgray;*/
-    /*-fx-border-radius: 3;*/
-    /*-fx-background-radius: 3;*/
-    /*-fx-background-color: #426FC5;*/
+.button-amount-selector {
+    -fx-text-fill: white, 25;
+    -fx-border-color: dimgray;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-background-color: #426FC5;
 
-/*}*/
+}
 
-/*.text-listview-magasins {*/
-    /*-fx-font-weight: 600;*/
-/*}*/
+.text-listview-magasins {
+    -fx-font-weight: 600;
+}
 
-/*.title-magasin {*/
-    /*-fx-font-size: 25;*/
-    /*-fx-text-fill: black;*/
-/*}*/
+.title-magasin {
+    -fx-font-size: 25;
+    -fx-text-fill: black;
+}
 
-/*.VBox {*/
-    /*-fx-background-color: red;*/
-/*}*/
+.VBox {
+    -fx-background-color: red;
+}

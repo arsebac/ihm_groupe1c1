@@ -50,7 +50,6 @@ public class GestionMagasins {
     @FXML
     void addMagasin(ActionEvent event) throws IOException {
         ModifyAddMagasin modifyAddMagasin = new ModifyAddMagasin(null,  observableList, filterTextField);
-
     }
 
     @FXML
