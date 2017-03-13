@@ -50,8 +50,8 @@ public class TopController {
 	@FXML
 	void finaliseCommand(MouseEvent event) {
 		Magasin chosen = magasinsListView.getSelectionModel().getSelectedItem();
-		Alert alert = new Alert(Alert.AlertType.INFORMATION,"Votre commande a été enregistré ! Elle sera envoyé sous 5 jours ouvrés à l'adresse :\n\n"+chosen.getAdresse()+".\n\nVous pouvez appeler le "+chosen.getTelephone()+" pour suivre l'avancement de votre colis.");
-		alert.setHeaderText("Commande enregistrée !");
+		Alert alert = new Alert(Alert.AlertType.INFORMATION,"Votre commande n°12 a été enregistré ! Elle sera envoyé sous 5 jours ouvrés à l'adresse :\n\n"+chosen.getAdresse()+".\n\nVous pouvez appeler le "+chosen.getTelephone()+" pour suivre l'avancement de votre colis.");
+		alert.setHeaderText("Commande n°12 enregistrée !");
 		alert.showAndWait();
 		panierStage.close();
 
