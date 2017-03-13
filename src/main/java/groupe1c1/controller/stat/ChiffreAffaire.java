@@ -35,7 +35,6 @@ public class ChiffreAffaire {
 		XYChart.Series<String, Number> series = new XYChart.Series<>();
 		for (Map.Entry<String, Number> entry :
 				mag.entrySet()) {
-			System.out.println(entry);
 			series.getData().add(new XYChart.Data<String, Number>(entry.getKey(), entry.getValue()));
 		}
 		return series;

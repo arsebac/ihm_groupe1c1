@@ -1,6 +1,6 @@
 package groupe1c1.model;
 
-import groupe1c1.model.data.Affiche;
+import groupe1c1.model.data.ItemDiscount;
 import groupe1c1.model.data.ItemPhare;
 
 import java.util.HashMap;
@@ -13,22 +13,22 @@ import java.util.Set;
  */
 public class Panier {
 	private static Panier ourInstance = new Panier();
-	private static Map<Affiche, Integer> affiches;
+	private static Map<ItemDiscount, Integer> promotions;
 	private static Map<ItemPhare, Integer> items;
 	public static Panier getInstance() {
 		return ourInstance;
 	}
 
 	private Panier() {
-		affiches = new HashMap<>();
+		promotions = new HashMap<>();
 		items = new HashMap<>();
 	}
-	public static void addItem(Affiche affiche){
-		if(affiches.containsKey(affiche)){
-			int newCount = 1 + affiches.get(affiche);
-			affiches.replace(affiche,newCount);
+	public static void addItem(ItemDiscount affiche){
+		if(promotions.containsKey(affiche)){
+			int newCount = 1 + promotions.get(affiche);
+			promotions.replace(affiche,newCount);
 		}else{
-			affiches.put(affiche,1);
+			promotions.put(affiche,1);
 		}
 	}
 	public static int addItem(ItemPhare item){
@@ -54,23 +54,31 @@ public class Panier {
 		}
 		return 0;
 	}
-	public static void debug(){
-		System.out.println(affiches);
-		System.out.println(items);
-	}
 	public static double getTotalPrice(){
 		int total = 0;
 		for (Map.Entry<ItemPhare,Integer> item:
 				items.entrySet()) {
 			total += item.getKey().getCost() * item.getValue();
 		}
+		for (Map.Entry<ItemDiscount,Integer> item:
+				promotions.entrySet()) {
+			total += item.getKey().getCost() * item.getValue() * ( 1 - item.getKey().getDiscount()/100);
+		}
 		return total;
 	}
 	public static Set<Map.Entry<ItemPhare, Integer>> getItems(){
-		return items.entrySet();
+		HashMap<ItemPhare,Integer> map = new HashMap<>();
+		map.putAll(promotions);
+		map.putAll(items);
+		return map.entrySet();
 	}
 
 	public static String getItemsPrice(ItemPhare item) {
-		return (item.getCost() * items.get(item)) + "€";
+		if(items.containsKey(item)){
+			return  Math.round((item.getCost() * items.get(item))  * 100.0) / 100.0+ "€";
+		}else{
+			ItemDiscount discount = (ItemDiscount) item;
+			return Math.round(discount.getCost() * promotions.get(discount) * ( 1 - discount.getDiscount()/100) * 100.0) / 100.0+ "€";
+		}
 	}
 }

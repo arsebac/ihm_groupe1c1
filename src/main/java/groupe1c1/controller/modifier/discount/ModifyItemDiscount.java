@@ -1,12 +1,15 @@
-package groupe1c1.controller.form;
+package groupe1c1.controller.modifier.discount;
 
-import groupe1c1.model.data.ItemPhare;
+import groupe1c1.model.ItemsDiscountManager;
+import groupe1c1.model.Promos;
+import groupe1c1.model.data.ItemDiscount;
 import groupe1c1.utils.LocatedImage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -20,10 +23,10 @@ import java.io.IOException;
  * @author Hasaghi
  * @date 08/03/2017
  */
-public class ModifyItem {
+public class ModifyItemDiscount {
 
 	private final Stage subStage;
-	private ItemPhare item;
+	private ItemDiscount item;
 	@FXML
 	private ImageView image;
 	@FXML
@@ -31,7 +34,12 @@ public class ModifyItem {
 	@FXML
 	private TextField price;
 	@FXML
+	private TextField promotion;
+	@FXML
 	private TextField name;
+	@FXML
+	private Label priceText;
+
 	@FXML
 	void modifyImage(MouseEvent event) {
 		System.out.println("modifie le path de l'image");
@@ -39,19 +47,20 @@ public class ModifyItem {
 
 	@FXML
 	void save(MouseEvent event) {
-		double prix = (price.getText().length() > 0 ? Double.parseDouble(price.getText()) : 0.0);
 		String itemName = name.getText();
+		double promo = (promotion.getText().length() > 0 ? Double.parseDouble(promotion.getText()) : 0.0);
+		double prix = (price.getText().length() > 0 ? Double.parseDouble(price.getText()) : 0.0);
 		String path = ((LocatedImage) image.getImage()).getUrl();
-		ItemPhare newItem = new ItemPhare(itemName,prix,path);
+		ItemDiscount newItem = new ItemDiscount(itemName,prix,promo, path);
 		subStage.close();
-		enseigne.updateItem(item,newItem);
+		Promos.updateItem(item,newItem);
 
 	}
-	private CreationEnseigne enseigne;
 
-	public ModifyItem(CreationEnseigne enseigne, ItemPhare item) throws IOException {
+
+	public ModifyItemDiscount( ItemDiscount item) throws IOException {
 		subStage = new Stage();
-		subStage.setTitle("Modifier un item");
+		subStage.setTitle("Modifier une promotion");
 		String fxmlFile = "/fxml/modifyItem.fxml";
 		FXMLLoader loader = new FXMLLoader();
 		loader.setController(this);
@@ -62,16 +71,18 @@ public class ModifyItem {
 		root.getChildren().add(parent);
 		subStage.setScene(scene);
 		subStage.show();
-		this.enseigne = enseigne;
 		this.item = item;
 		updateView(item);
 
 	}
-	public void updateView(ItemPhare item){
+
+	public void updateView(ItemDiscount item) {
 		LocatedImage img = LocatedImage.create(item.getUrl());
 		image.setImage(img);
 		name.setText(item.getName());
 		price.setText(String.valueOf(item.getCost()));
+		promotion.setText(String.valueOf(item.getDiscount()));
 
 	}
+
 }

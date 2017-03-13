@@ -1,6 +1,6 @@
 package groupe1c1.controller.form;
 
-import groupe1c1.model.data.Affiche;
+import groupe1c1.model.data.ItemDiscount;
 import groupe1c1.utils.LocatedImage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,9 +16,8 @@ import java.io.IOException;
  * @author Hasaghi
  * @date 06/03/2017
  */
-public class AfficheListViewCell extends ListCell<Affiche> {
+public class AfficheListViewCell extends ListCell<ItemDiscount> {
 
-	private final CreationEnseigne enseigne;
 	private FXMLLoader fxmlLoader;
 	@FXML
 	private ImageView image;
@@ -29,15 +28,13 @@ public class AfficheListViewCell extends ListCell<Affiche> {
 	@FXML
 	private BorderPane pane;
 
-	public AfficheListViewCell(CreationEnseigne enseigne) {
-		this.enseigne = enseigne;
+	public AfficheListViewCell() {
 
 	}
 
 	@Override
-	protected void updateItem(Affiche item, boolean empty) {
+	protected void updateItem(ItemDiscount item, boolean empty) {
 		super.updateItem(item, empty);
-		enseigne.updateAfficheCounter();
 		if (empty || item == null) {
 			setGraphicAndText(null, null);
 		} else {
@@ -55,9 +52,9 @@ public class AfficheListViewCell extends ListCell<Affiche> {
 			setGraphicAndText(pane, null);
 		}
 	}
-	private void setAttribute(Affiche affiche){
+	private void setAttribute(ItemDiscount affiche){
 		name.setText(affiche.getName());
-		image.setImage(LocatedImage.create(affiche.getPath()));
+		image.setImage(LocatedImage.create(affiche.getUrl()));
 	}
 
 	private void setGraphicAndText(Node graphic, String text) {

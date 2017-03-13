@@ -31,12 +31,11 @@ public class ReturnProduct {
 	private void createLineChartSeries(){
 		for (Map.Entry<String ,Map<Integer,Integer>> entry:
 				model.getReturnProduct().entrySet()) {
-			XYChart.Series serie = new XYChart.Series<>();
+			XYChart.Series<Number, Number> serie = new XYChart.Series<>();
 			serie.setName(entry.getKey());
 			for (Map.Entry<Integer, Integer> graph :
 					entry.getValue().entrySet()) {
 				serie.getData().add(new XYChart.Data<>(graph.getKey(),graph.getValue()));
-				System.out.println(graph);
 			}
 			returnProduct.getData().add(serie);
 		}

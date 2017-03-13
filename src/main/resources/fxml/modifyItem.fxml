@@ -52,6 +52,11 @@
                        <VBox.margin>
                            <Insets bottom="35.0" left="10.0" />
                        </VBox.margin></Label>
+                  <Label text="Promotion ">
+                     <VBox.margin>
+                        <Insets bottom="35.0" left="10.0" />
+                     </VBox.margin>
+                  </Label>
                      <Label prefHeight="26.0" prefWidth="86.0" text="Nom du produit">
                      <VBox.margin>
                         <Insets bottom="30.0" left="10.0" />
@@ -64,6 +69,11 @@
                      <VBox.margin>
                         <Insets bottom="30.0" />
                      </VBox.margin></TextField>
+                  <TextField fx:id="promotion">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </TextField>
                      <TextField fx:id="name" />
                </children></VBox>
            </children>

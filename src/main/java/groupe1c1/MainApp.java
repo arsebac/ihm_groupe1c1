@@ -33,7 +33,7 @@ public class MainApp extends Application {
         parent.getChildren().add(loadTop(tp));
 
         parent.getChildren().add(new Separator());
-        PromosController promoContro = new PromosController(ens);
+        PromosController promoContro = new PromosController();
         parent.getChildren().add(loadPromo(promoContro));
         parent.getChildren().add(new Separator());
         parent.getChildren().add(loadProduitPhares());

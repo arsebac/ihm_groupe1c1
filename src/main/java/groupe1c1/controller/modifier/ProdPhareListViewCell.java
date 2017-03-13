@@ -1,4 +1,4 @@
-package groupe1c1.controller.form;
+package groupe1c1.controller.modifier;
 
 import groupe1c1.model.data.ItemPhare;
 import groupe1c1.utils.LocatedImage;
@@ -19,18 +19,15 @@ import java.io.IOException;
  */
 public class ProdPhareListViewCell extends ListCell<ItemPhare> {
 
-	private final CreationEnseigne enseigne;
+	private final ModifyItemPanelController enseigne;
 	@FXML
 	private ImageView img;
-
 	@FXML
 	private Label name;
-
 	@FXML
 	private Button plusB;
 	@FXML
 	private Button minusB;
-
 	@FXML
 	private BorderPane itemPane;
 	private FXMLLoader fxmlLoader;
@@ -38,7 +35,7 @@ public class ProdPhareListViewCell extends ListCell<ItemPhare> {
 	@FXML
 	private Label number;
 
-	public ProdPhareListViewCell(CreationEnseigne enseigne) {
+	public ProdPhareListViewCell(ModifyItemPanelController enseigne) {
 		this.enseigne = enseigne;
 	}
 

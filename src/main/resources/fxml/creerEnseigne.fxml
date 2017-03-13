@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1c1.controller.form.CreationEnseigne">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Création d'une enseigne" textAlignment="CENTER" wrappingWidth="1210">
          <font>
@@ -48,31 +48,7 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </Text>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" onMouseClicked="#addButton" prefHeight="25.0" prefWidth="70.0" text="Ajouter">
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
-                                       </VBox.margin>
-                                    </Button>
-                                    <Button mnemonicParsing="false" onMouseClicked="#modifyButton" prefHeight="25.0" prefWidth="70.0" text="Modifier">
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" left="15.0" top="5.0" />
-                                       </VBox.margin>
-                                    </Button>
-                                    <Button mnemonicParsing="false" onMouseClicked="#delButton" text="Supprimer">
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" left="15.0" top="5.0" />
-                                       </VBox.margin>
-                                    </Button>
-                                    <Text fx:id="prodText" strokeType="OUTSIDE" strokeWidth="0.0" text="0 produit" textAlignment="CENTER" wrappingWidth="100.0" />
-                                 </children>
-                              </VBox>
-                              <ListView fx:id="listProd" orientation="HORIZONTAL" prefHeight="100.0" prefWidth="1110.0" />
-                           </children>
-                        </HBox>
+                        <fx:include source="/fxml/modifyItemDiscountPanel.fxml" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Produits phares" textAlignment="CENTER" wrappingWidth="1210.0">
                            <font>
                               <Font name="Arimo" size="31.0" />
@@ -82,32 +58,8 @@
                               <Insets top="40.0" />
                            </VBox.margin>
                         </Text>
-                        <HBox prefHeight="300.0" prefWidth="1210.0">
-                        <children>
-                           <VBox prefHeight="200.0" prefWidth="100.0">
-                              <children>
-                                 <Button mnemonicParsing="false" onMouseClicked="#addProdButton" prefHeight="25.0" prefWidth="70.0" text="Ajouter">
-                                    <VBox.margin>
-                                       <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
-                                    </VBox.margin>
-                                 </Button>
-                                 <Button mnemonicParsing="false" onMouseClicked="#modifyProdButton" prefHeight="25.0" prefWidth="70.0" text="Modifier">
-                                    <VBox.margin>
-                                       <Insets bottom="5.0" left="15.0" top="5.0" />
-                                    </VBox.margin>
-                                 </Button>
-                                 <Button mnemonicParsing="false" onMouseClicked="#ProddelButton" text="Supprimer">
-                                    <VBox.margin>
-                                       <Insets bottom="5.0" left="15.0" top="5.0" />
-                                    </VBox.margin>
-                                 </Button>
-                                 <Text fx:id="sprodText" strokeType="OUTSIDE" strokeWidth="0.0" text="0 produit sur 12" textAlignment="CENTER" wrappingWidth="100.0" />
-                              </children>
-                           </VBox>
-                           <ListView fx:id="listPhare" orientation="HORIZONTAL" prefHeight="100.0" prefWidth="1110.0" />
-                        </children>
-                     </HBox>
-                        <Button fx:id="ssaveButton" mnemonicParsing="false" onMouseClicked="#save" prefHeight="80.0" prefWidth="150.0" text="Enregister" textAlignment="CENTER">
+                        <fx:include source="/fxml/modifyItemPanel.fxml"/>
+                        <Button fx:id="ssaveButton" mnemonicParsing="false" onMouseClicked="#reload" prefHeight="80.0" prefWidth="150.0" text="Revenir sur l'enseigne" textAlignment="CENTER">
                            <VBox.margin>
                               <Insets left="500.0" top="10.0" />
                            </VBox.margin>

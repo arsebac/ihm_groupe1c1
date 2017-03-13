@@ -3,6 +3,7 @@ package groupe1c1;/**
  * @date 06/03/2017
  */
 
+import groupe1c1.controller.form.CreationEnseigne;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,6 +29,8 @@ public class CreateEnseigne extends Application {
 
 		String fxmlFile = "/fxml/creerEnseigne.fxml";
 		FXMLLoader loader = new FXMLLoader();
+		CreationEnseigne enseigne = new CreationEnseigne();
+		loader.setController(enseigne);
 		VBox parent = loader.load(getClass().getResourceAsStream(fxmlFile));
 		TabPane tabPane = (TabPane) parent.getChildren().get(2);
 		tabPane.getTabs().get(1).setContent(loadGestionMagasin());
@@ -37,6 +40,7 @@ public class CreateEnseigne extends Application {
 		primaryStage.setTitle("Création d'une enseigne");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		enseigne.setStage(primaryStage);
 	}
 
 	private Node loadGestionMagasin() throws IOException {

@@ -1,6 +1,6 @@
 package groupe1c1.controller;
 
-import groupe1c1.model.ItemsManager;
+import groupe1c1.model.ItemsPharesManager;
 import groupe1c1.model.Panier;
 import groupe1c1.model.data.ItemPhare;
 import javafx.fxml.FXML;
@@ -20,11 +20,9 @@ public class ProduitController {
 	@FXML
 	private URL location;
 	
-	private ItemsManager itemsManager;
 
 	@FXML
 	void initialize() {
-		itemsManager = new ItemsManager();
 		createItemList();
 	}
 
@@ -32,8 +30,8 @@ public class ProduitController {
 	 * Affiche la grille de produit phares
 	 */
 	private void createItemList() {
-		int sizeGrid = 7;
-		List<ItemPhare> phareList = itemsManager.getItemPhare();
+		int sizeGrid = ItemsPharesManager.MAX_ITEM / 2;
+		List<ItemPhare> phareList = ItemsPharesManager.getItemPhare();
 		for (int i = 0; i < phareList.size(); i++) {
 			ItemPhare item = phareList.get(i);
 			drawItem(item, i % sizeGrid, i / sizeGrid);
