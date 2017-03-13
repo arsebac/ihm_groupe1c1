@@ -1,0 +1,8 @@
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<LineChart fx:id="returnProduct" layoutX="355.0" layoutY="146.0" title="Produits renvoyés les 30 derniers jours" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1c1.controller.stat.ReturnProduct">
+        <xAxis><NumberAxis /></xAxis>
+    <yAxis>
+        <NumberAxis side="LEFT" />
+    </yAxis>
+</LineChart>
