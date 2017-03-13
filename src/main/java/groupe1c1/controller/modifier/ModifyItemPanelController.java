@@ -1,5 +1,7 @@
 package groupe1c1.controller.modifier;
 
+import groupe1c1.controller.modifier.phares.ModifyItem;
+import groupe1c1.controller.modifier.phares.ProdPhareListViewCell;
 import groupe1c1.model.ItemsPharesManager;
 import groupe1c1.model.data.ItemPhare;
 import groupe1c1.utils.ListUtils;

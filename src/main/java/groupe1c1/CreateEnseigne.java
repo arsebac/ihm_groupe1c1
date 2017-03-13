@@ -1,23 +1,20 @@
-package groupe1c1;/**
- * @author Hasaghi
- * @date 06/03/2017
- */
+package groupe1c1;
 
 import groupe1c1.controller.form.CreationEnseigne;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import jdk.internal.util.xml.impl.Input;
 
 import java.io.IOException;
-import java.io.InputStream;
 
+/**
+ * @author Hasaghi
+ * @date 06/03/2017
+ */
 public class CreateEnseigne extends Application {
 
 	public static void main(String[] args) {

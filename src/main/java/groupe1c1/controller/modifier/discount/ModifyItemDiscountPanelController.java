@@ -1,12 +1,9 @@
 package groupe1c1.controller.modifier.discount;
 
-import groupe1c1.controller.form.AfficheListViewCell;
-import groupe1c1.controller.modifier.ProdPhareListViewCell;
-import groupe1c1.model.ItemsDiscountManager;
+import groupe1c1.controller.modifier.phares.AfficheListViewCell;
 import groupe1c1.model.ItemsPharesManager;
 import groupe1c1.model.Promos;
 import groupe1c1.model.data.ItemDiscount;
-import groupe1c1.model.data.ItemPhare;
 import groupe1c1.utils.ListUtils;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,10 +14,11 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 
 /**
- * @author Hasaghi
- * @date 13/03/2017
+ * Controlleur de la partie "Produits mis en avant" affiché dans la vue de la modification de l'enseigne
+ * @author François Melkonian
  */
 public class ModifyItemDiscountPanelController {
+
 	private ObservableList<ItemDiscount> observableList;
 
 	@FXML
@@ -39,6 +37,9 @@ public class ModifyItemDiscountPanelController {
 		updateAfficheCounter();
 	}
 
+	/**
+	 * Ajoute un produit à la liste en promotion et ouvre la fenêtre de modification du produit ajouté
+	 */
 	@FXML
 	void addButton(MouseEvent event) {
 		ItemDiscount newItemDiscount = new ItemDiscount("Nouveau produit",0,0,"/images/produit1.png");
@@ -47,6 +48,12 @@ public class ModifyItemDiscountPanelController {
 		updateItemDiscount(newItemDiscount);
 		updateAfficheCounter();
 	}
+
+	/**
+	 * Récupère le produit sélectionné et
+	 * Ouvre la fenêtre de modification sur ce produit
+	 * @param event
+	 */
 	@FXML
 	void modifyButton(MouseEvent event) {
 		if(listProd.getSelectionModel().getSelectedItem()!=null)

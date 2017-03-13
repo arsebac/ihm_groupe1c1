@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ItemsPharesManager {
 	private static ItemsPharesManager ourInstance = new ItemsPharesManager();
-	public static int MAX_ITEM = 12;
+	public static final int MAX_ITEM = 12;
 	private static List<ItemPhare> produitPhares;
 	private ItemsPharesManager() {
 		System.out.println("chargement");

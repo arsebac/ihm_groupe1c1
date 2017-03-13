@@ -1,25 +1,22 @@
 package groupe1c1.controller;
 
 import groupe1c1.model.ItemsPharesManager;
-import groupe1c1.model.Panier;
 import groupe1c1.model.data.ItemPhare;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 
+/**
+ * Contrôleur de la partie "Produits phares"  de la vue principale
+ * @author Francois Melkonian
+ */
 public class ProduitController {
 	@FXML
 	private GridPane itemsGrid;
-
-	@FXML
-	private URL location;
-	
 
 	@FXML
 	void initialize() {
@@ -27,7 +24,7 @@ public class ProduitController {
 	}
 
 	/**
-	 * Affiche la grille de produit phares
+	 * Affiche la grille de produit phares dans une GridBox.
 	 */
 	private void createItemList() {
 		int sizeGrid = ItemsPharesManager.MAX_ITEM / 2;
@@ -36,12 +33,6 @@ public class ProduitController {
 			ItemPhare item = phareList.get(i);
 			drawItem(item, i % sizeGrid, i / sizeGrid);
 		}
-	}
-	private javafx.event.EventHandler<MouseEvent> createListener(final ItemPhare item,final boolean add){
-		return event -> Panier.addItem(item);
-	}
-	public void clickItem(ItemPhare item,boolean add){
-		System.out.println(item +" : "+add);
 	}
 
 	public void drawItem(ItemPhare item ,int x, int y){

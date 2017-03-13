@@ -25,7 +25,6 @@ public class MainApp extends Application {
     }
 
     public void start(Stage stage) throws Exception {
-        EnseigneDeserializer ens = new EnseigneDeserializer();
         log.info("Starting Hello JavaFX and Maven demonstration application");
         VBox parent = new VBox();
         parent.setSpacing(15);

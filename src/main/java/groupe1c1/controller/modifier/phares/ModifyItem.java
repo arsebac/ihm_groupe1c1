@@ -1,4 +1,4 @@
-package groupe1c1.controller.modifier;
+package groupe1c1.controller.modifier.phares;
 
 import groupe1c1.model.ItemsPharesManager;
 import groupe1c1.model.data.ItemPhare;

@@ -1,5 +1,6 @@
-package groupe1c1.controller.modifier;
+package groupe1c1.controller.modifier.phares;
 
+import groupe1c1.controller.modifier.ModifyItemPanelController;
 import groupe1c1.model.data.ItemPhare;
 import groupe1c1.utils.LocatedImage;
 import javafx.fxml.FXML;

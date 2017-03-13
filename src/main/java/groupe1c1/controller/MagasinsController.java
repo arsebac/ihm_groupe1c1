@@ -2,7 +2,6 @@ package groupe1c1.controller;
 
 import groupe1c1.model.data.Magasin;
 import groupe1c1.model.MagasinModel;
-import groupe1c1.persistence.json.gson.MagasinsSerializer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -10,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +22,6 @@ public class MagasinsController {
     @FXML
     private TextField textMagasin;
 
-    @FXML
     private Button buttonAppliquer;
 
     private List<Magasin> magasins;

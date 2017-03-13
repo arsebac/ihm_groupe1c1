@@ -32,6 +32,10 @@ public class CreationEnseigne {
 	}
 
 
+	@FXML
+	public void initialize() throws IOException {
+		updateImage(LogoManager.getImage());
+	}
 
 	@FXML
 	void reload(MouseEvent event) throws Exception {
@@ -40,10 +44,6 @@ public class CreationEnseigne {
 
 
 
-	@FXML
-	public void initialize() throws IOException {
-		updateImage(LogoManager.getImage());
-	}
 
 	public void setStage(Stage primaryStage) {
 		this.stage = primaryStage;
