@@ -115,10 +115,6 @@ public class TopController {
 
 	}
 
-	public void addStage(Stage stage) {
-
-	}
-
 	public void registerParents(Stage stage, Parent parent) {
 		this.mainStage = stage;
 		this.parent = parent;
