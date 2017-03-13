@@ -45,6 +45,7 @@ public class TopController {
 	@FXML
 	private ListView<Magasin> magasinsListView;
 	private Stage mainStage = null;
+	private Parent parent;
 
 	@FXML
 	void finaliseCommand(MouseEvent event) {
@@ -115,6 +116,11 @@ public class TopController {
 	}
 
 	public void addStage(Stage stage) {
+
+	}
+
+	public void registerParents(Stage stage, Parent parent) {
 		this.mainStage = stage;
+		this.parent = parent;
 	}
 }

@@ -46,7 +46,7 @@ public class MainApp extends Application {
         stage.setTitle("Hello JavaFX and Maven");
         stage.setScene(scene);
         stage.show();
-        tp.addStage(stage);
+        tp.registerParents(stage,parent);
         promoContro.update();
     }
 
