@@ -18,21 +18,21 @@
    <bottom>
       <BorderPane prefHeight="48.0" prefWidth="104.0" BorderPane.alignment="CENTER">
          <left>
-            <Button styleClass="button-amount-selector" fx:id="minusB" mnemonicParsing="false" text="-" BorderPane.alignment="CENTER">
+            <Button fx:id="minusB" mnemonicParsing="false" styleClass="button-amount-selector" text="-" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets right="10.0" />
+                  <Insets />
                </BorderPane.margin></Button>
          </left>
          <center>
-            <Label fx:id="number" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" text="10" BorderPane.alignment="CENTER">
+            <Label fx:id="number" alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="80.0" text="0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets left="10.0" right="10.0" />
                </BorderPane.margin></Label>
          </center>
          <right>
-            <Button styleClass="button-amount-selector" fx:id="plusB" mnemonicParsing="false" text="+" BorderPane.alignment="CENTER">
+            <Button fx:id="plusB" mnemonicParsing="false" styleClass="button-amount-selector" text="+" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets left="10.0" />
+                  <Insets />
                </BorderPane.margin></Button>
          </right>
          <top>
