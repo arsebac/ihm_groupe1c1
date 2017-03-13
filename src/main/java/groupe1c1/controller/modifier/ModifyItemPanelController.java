@@ -50,7 +50,7 @@ public class ModifyItemPanelController {
 		ItemPhare itemToModify = listPhare.getSelectionModel().getSelectedItem();
 		if (listPhare.getSelectionModel().getSelectedItem() == null) return;
 		try {
-			new ModifyItem(itemToModify);
+			new ModifyItem(itemToModify, this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

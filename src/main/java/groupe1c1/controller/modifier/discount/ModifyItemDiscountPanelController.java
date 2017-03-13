@@ -15,7 +15,6 @@ import java.io.IOException;
 
 /**
  * Controlleur de la partie "Produits mis en avant" affiché dans la vue de la modification de l'enseigne
- *
  * @author François Melkonian
  */
 public class ModifyItemDiscountPanelController {
@@ -53,7 +52,6 @@ public class ModifyItemDiscountPanelController {
 	/**
 	 * Récupère le produit sélectionné et
 	 * Ouvre la fenêtre de modification sur ce produit
-	 *
 	 * @param event
 	 */
 	@FXML
@@ -64,12 +62,11 @@ public class ModifyItemDiscountPanelController {
 
 	private void updateItemDiscount(ItemDiscount itemToModify) {
 		try {
-			new ModifyItemDiscount(itemToModify);
+			new ModifyItemDiscount(itemToModify, this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
 	@FXML
 	void delButton(MouseEvent event) {
 		ItemDiscount i = listProd.getSelectionModel().getSelectedItem();
@@ -83,4 +80,10 @@ public class ModifyItemDiscountPanelController {
 	}
 
 
+	public void updateItem(ItemDiscount item, ItemDiscount newItem) {
+		int i = observableList.indexOf(item);
+		observableList.remove(item);
+		observableList.add(i, newItem);
+		ItemsPharesManager.updateItem(item, newItem);
+	}
 }
