@@ -6,10 +6,13 @@ import groupe1c1.model.data.Magasin;
 import groupe1c1.persistence.json.gson.MagasinsSerializer;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,26 +32,25 @@ public class GestionMagasins {
     private ListView<Magasin> magasinsListView;
 
     private List<Magasin> magasins;
-    private List<Magasin> toObserve;
     private ObservableList<Magasin> observableList;
 
 
     @FXML
     public void initialize() throws IOException {
-        MagasinModel magasinModel = new MagasinModel();
+        MagasinModel magasinModel = MagasinModel.getInstance();
 
         magasins = magasinModel.get();
-        toObserve = new ArrayList<>(magasins);
         MagasinsSerializer magasinsSerializer = new MagasinsSerializer();
         magasinsSerializer.serialize(magasins);
-        observableList = initObservableList(toObserve);
+        observableList = initObservableList(magasins);
         magasinsListView.setItems(observableList);
         magasinsListView.setCellFactory(magasinListView -> new MagasinListViewCell());
     }
 
     @FXML
     void addMagasin(ActionEvent event) throws IOException {
-        new ModifyAddMagasin(null);
+        ModifyAddMagasin modifyAddMagasin = new ModifyAddMagasin(null,  observableList, filterTextField);
+
     }
 
     @FXML
@@ -75,7 +77,6 @@ public class GestionMagasins {
         if (selectedMagasin != null) {
             observableList.remove(selectedMagasin);
             magasins.remove(selectedMagasin);
-            toObserve.remove(selectedMagasin);
         }
     }
 
@@ -83,7 +84,7 @@ public class GestionMagasins {
     void modifyMagasin(ActionEvent event) throws IOException {
         Magasin selectedMagasin = magasinsListView.getSelectionModel().getSelectedItem();
         if (selectedMagasin != null)
-            new ModifyAddMagasin(selectedMagasin);
+            new ModifyAddMagasin(selectedMagasin, observableList,  filterTextField);
     }
 
 

@@ -14,16 +14,26 @@ import java.util.List;
 public class MagasinModel {
 
     List<Magasin> magasins = new ArrayList<>();
+    private static MagasinModel INSTANCE = null;
 
-    public MagasinModel() throws IOException {
-       MagasinsDeserializer magasinsDeserializer = new MagasinsDeserializer();
-       magasins = magasinsDeserializer.deserialize();
+    private MagasinModel() throws IOException {
+        MagasinsDeserializer magasinsDeserializer = new MagasinsDeserializer();
+        magasins = magasinsDeserializer.deserialize();
     }
 
+
+    static public MagasinModel getInstance() throws IOException {
+       if (INSTANCE == null)
+           INSTANCE = new MagasinModel();
+       return INSTANCE;
+    }
+
+    public void add(Magasin magasin) {
+        magasins.add(magasin);
+    }
 
     public List<Magasin> get() {
         return magasins;
     }
-
 
 }

@@ -1,6 +1,8 @@
 package groupe1c1.controller.form;
 
+import groupe1c1.model.MagasinModel;
 import groupe1c1.model.data.Magasin;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -55,7 +57,13 @@ public class ModifyAddMagasin {
     private Magasin magasin;
     private FileChooser fileChooser;
 
-    public ModifyAddMagasin(Magasin magasin) throws IOException {
+    // TO UPDATE
+    private TextField textField;
+    private ObservableList<Magasin> observableList;
+
+    public ModifyAddMagasin(Magasin magasin, ObservableList observableList, TextField textField) throws IOException {
+        this.textField = textField;
+        this.observableList = observableList;
         fileChooser = new FileChooser();
         fileChooser.setTitle("Choisir une image");
         subStage = new Stage();
@@ -103,10 +111,47 @@ public class ModifyAddMagasin {
         fileChooser.showOpenDialog(subStage);
     }
 
+    private void add(Magasin magasin) throws IOException {
+        MagasinModel.getInstance().add(magasin);
+        observableList.add(magasin);
+    }
+
+    private void update() {
+
+    }
+
+
     private void setBtModifyHandler() {
-        btModify.setOnMouseClicked(new EventHandler<javafx.scene.input.MouseEvent>() {
-            @Override
-            public void handle(javafx.scene.input.MouseEvent event) {
+        btModify.setOnMouseClicked(event -> {
+            String textName = name.getText();
+            String textCentreCommercial = centreCommercial.getText();
+            String textAdresse = adresse.getText();
+            String textTelephone = telephone.getText();
+            String textMail = mail.getText();
+            String textSiteWeb = siteWeb.getText();
+
+            if (!(textName.isEmpty() && textCentreCommercial.isEmpty() && textAdresse.isEmpty() && textTelephone.isEmpty()
+                    && textMail.isEmpty() && textSiteWeb.isEmpty())) {
+                if (magasin == null) {
+                    try {
+                        add(new Magasin(textName, "", textCentreCommercial, textAdresse, textTelephone, textMail, textSiteWeb));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                else {
+                    magasin.setAdresse(textAdresse);
+                    magasin.setCentreCommercial(textCentreCommercial);
+                    magasin.setMail(textMail);
+                    magasin.setName(textName);
+                    magasin.setPathImage("");
+                    magasin.setSiteWeb(textSiteWeb);
+                    magasin.setTelephone(textTelephone);
+                    observableList.set(observableList.indexOf(magasin), magasin);
+                }
+
+                textField.setText("");
                 subStage.close();
             }
         });

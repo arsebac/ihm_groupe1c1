@@ -64,7 +64,7 @@ public class TopController {
 	@FXML
 	void commandButton(MouseEvent event) throws IOException {
 		panierStage.close();
-		observableList = ListUtils.initObservableList(new MagasinModel().get());
+		observableList = ListUtils.initObservableList(MagasinModel.getInstance().get());
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setController(this);

@@ -18,7 +18,7 @@
    <bottom>
       <BorderPane prefHeight="48.0" prefWidth="104.0" BorderPane.alignment="CENTER">
          <left>
-            <Button fx:id="minusB" mnemonicParsing="false" text="-" BorderPane.alignment="CENTER">
+            <Button styleClass="button-amount-selector" fx:id="minusB" mnemonicParsing="false" text="-" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets right="10.0" />
                </BorderPane.margin></Button>
@@ -30,7 +30,7 @@
                </BorderPane.margin></Label>
          </center>
          <right>
-            <Button fx:id="plusB" mnemonicParsing="false" text="+" BorderPane.alignment="CENTER">
+            <Button styleClass="button-amount-selector" fx:id="plusB" mnemonicParsing="false" text="+" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets left="10.0" />
                </BorderPane.margin></Button>

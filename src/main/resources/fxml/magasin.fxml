@@ -12,7 +12,7 @@
 <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="982.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="37.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fx:id="name" layoutX="513.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du magasin">
+      <Text styleClass="title-magasin" fx:id="name" layoutX="513.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du magasin">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -21,12 +21,12 @@
          <children>
             <HBox prefHeight="10.0" prefWidth="612.0">
                <children>
-                  <Label prefWidth="141.0" text="Centre commercial">
+                  <Label styleClass="label-listView-magasin" prefWidth="141.0" text="Centre commercial">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Text id="centreCommercial" fx:id="centreCommercial" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple centre commercial" wrappingWidth="187.2446241825819">
+                  <Text styleClass="text-listview-magasins" id="centreCommercial" fx:id="centreCommercial" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple centre commercial" wrappingWidth="187.2446241825819">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
@@ -35,12 +35,12 @@
             </HBox>
             <HBox prefHeight="15.0" prefWidth="612.0">
                <children>
-                  <Label prefHeight="21.0" prefWidth="141.0" text="Téléphone">
+                  <Label styleClass="label-listView-magasin" prefHeight="21.0" prefWidth="141.0" text="Téléphone">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Text id="telephone" fx:id="telephone" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple de téléphone" wrappingWidth="187.2446241825819">
+                  <Text styleClass="text-listview-magasins" id="telephone" fx:id="telephone" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple de téléphone" wrappingWidth="187.2446241825819">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
@@ -49,12 +49,12 @@
             </HBox>
             <HBox prefHeight="39.0" prefWidth="369.0">
                <children>
-                  <Label prefWidth="141.0" text="Adresse ">
+                  <Label styleClass="label-listView-magasin" prefWidth="141.0" text="Adresse ">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Text id="adresse" fx:id="adresse" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple d'adresse" wrappingWidth="199.6171875">
+                  <Text styleClass="text-listview-magasins" id="adresse" fx:id="adresse" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple d'adresse" wrappingWidth="199.6171875">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
@@ -67,12 +67,12 @@
          <children>
             <HBox prefHeight="15.0" prefWidth="612.0">
                <children>
-                  <Label prefHeight="21.0" prefWidth="141.0" text="Site">
+                  <Label styleClass="label-listView-magasin" prefHeight="21.0" prefWidth="141.0" text="Site">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Text id="pageInternet" fx:id="siteWeb" strokeType="OUTSIDE" strokeWidth="0.0" text="blablablaba" wrappingWidth="240.0">
+                  <Text styleClass="text-listview-magasins" id="pageInternet" fx:id="siteWeb" strokeType="OUTSIDE" strokeWidth="0.0" text="blablablaba" wrappingWidth="240.0">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
@@ -81,12 +81,12 @@
             </HBox>
             <HBox prefHeight="6.0" prefWidth="612.0">
                <children>
-                  <Label prefHeight="21.0" prefWidth="141.0" text="Mail">
+                  <Label styleClass="label-listView-magasin" prefHeight="21.0" prefWidth="141.0" text="Mail">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Text id="mail" fx:id="mail" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple de mail" wrappingWidth="240.0">
+                  <Text styleClass="text-listview-magasins" id="mail" fx:id="mail" strokeType="OUTSIDE" strokeWidth="0.0" text="Exemple de mail" wrappingWidth="240.0">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>

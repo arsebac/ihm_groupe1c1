@@ -33,7 +33,7 @@ public class MagasinsController {
 
     @FXML
     public void initialize() throws IOException {
-        MagasinModel magasinModel = new MagasinModel();
+        MagasinModel magasinModel = MagasinModel.getInstance();
 
         magasins = magasinModel.get();
         toObserve = new ArrayList<>(magasins);
