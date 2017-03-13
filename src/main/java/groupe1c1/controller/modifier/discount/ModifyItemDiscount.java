@@ -1,6 +1,5 @@
 package groupe1c1.controller.modifier.discount;
 
-import groupe1c1.model.ItemsDiscountManager;
 import groupe1c1.model.Promos;
 import groupe1c1.model.data.ItemDiscount;
 import groupe1c1.utils.LocatedImage;
@@ -40,25 +39,7 @@ public class ModifyItemDiscount {
 	@FXML
 	private Label priceText;
 
-	@FXML
-	void modifyImage(MouseEvent event) {
-		System.out.println("modifie le path de l'image");
-	}
-
-	@FXML
-	void save(MouseEvent event) {
-		String itemName = name.getText();
-		double promo = (promotion.getText().length() > 0 ? Double.parseDouble(promotion.getText()) : 0.0);
-		double prix = (price.getText().length() > 0 ? Double.parseDouble(price.getText()) : 0.0);
-		String path = ((LocatedImage) image.getImage()).getUrl();
-		ItemDiscount newItem = new ItemDiscount(itemName,prix,promo, path);
-		subStage.close();
-		Promos.updateItem(item,newItem);
-
-	}
-
-
-	public ModifyItemDiscount( ItemDiscount item) throws IOException {
+	public ModifyItemDiscount(ItemDiscount item) throws IOException {
 		subStage = new Stage();
 		subStage.setTitle("Modifier une promotion");
 		String fxmlFile = "/fxml/modifyItem.fxml";
@@ -73,6 +54,23 @@ public class ModifyItemDiscount {
 		subStage.show();
 		this.item = item;
 		updateView(item);
+
+	}
+
+	@FXML
+	void modifyImage(MouseEvent event) {
+		System.out.println("modifie le path de l'image");
+	}
+
+	@FXML
+	void save(MouseEvent event) {
+		String itemName = name.getText();
+		double promo = (promotion.getText().length() > 0 ? Double.parseDouble(promotion.getText()) : 0.0);
+		double prix = (price.getText().length() > 0 ? Double.parseDouble(price.getText()) : 0.0);
+		String path = ((LocatedImage) image.getImage()).getUrl();
+		ItemDiscount newItem = new ItemDiscount(itemName, prix, promo, path);
+		subStage.close();
+		Promos.updateItem(item, newItem);
 
 	}
 

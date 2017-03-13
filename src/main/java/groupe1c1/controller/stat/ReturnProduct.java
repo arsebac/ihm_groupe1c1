@@ -2,40 +2,42 @@ package groupe1c1.controller.stat;
 
 import groupe1c1.model.StatModel;
 import javafx.fxml.FXML;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.StackedAreaChart;
 import javafx.scene.chart.XYChart;
 
 import java.io.IOException;
 import java.util.Map;
 
 /**
- * @author user
- * @date 13/03/2017
+ * Controlleur du graphique des produits retourné
+ * Le graphique est présent dans une tabulation de la vue de modification de l'enseigne
+ *
+ * @author Francois Melkonian
  */
 public class ReturnProduct {
-
 	@FXML
-	private LineChart<Number,Number> returnProduct;
+	private StackedAreaChart<Number, Number> returnProduct;
 	private StatModel model;
 
 	@FXML
 	public void initialize() throws IOException {
 		model = new StatModel();
-		final NumberAxis xAxis = new NumberAxis();
-		final NumberAxis yAxis = new NumberAxis();
-		returnProduct = new LineChart<Number, Number>(xAxis, yAxis);
 		createLineChartSeries();
 	}
 
-	private void createLineChartSeries(){
-		for (Map.Entry<String ,Map<Integer,Integer>> entry:
+	/**
+	 * Convertit les données sur les produits renvoyé du modèle en XYChart.Series pour être affichée.
+	 * Les données sont initialement stocké dans un tableau qui associe le nom d'un magasin
+	 * à un tableau qui à chaque jour associe le nombre de produits retournés
+	 */
+	private void createLineChartSeries() {
+		for (Map.Entry<String, Map<Integer, Integer>> entry :
 				model.getReturnProduct().entrySet()) {
 			XYChart.Series<Number, Number> serie = new XYChart.Series<>();
 			serie.setName(entry.getKey());
 			for (Map.Entry<Integer, Integer> graph :
 					entry.getValue().entrySet()) {
-				serie.getData().add(new XYChart.Data<>(graph.getKey(),graph.getValue()));
+				serie.getData().add(new XYChart.Data<>(graph.getKey(), graph.getValue()));
 			}
 			returnProduct.getData().add(serie);
 		}

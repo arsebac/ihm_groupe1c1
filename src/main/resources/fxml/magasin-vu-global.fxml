@@ -5,16 +5,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1c1.controller.MagasinsController">
-   <children>
-      <ListView fx:id="listViewMagasins" layoutX="87.0" layoutY="136.0" prefHeight="380.0" prefWidth="1027.0" />
-      <TextField fx:id="textMagasin" layoutX="275.0" layoutY="81.0" onKeyReleased="#appliquerFiltre" prefHeight="31.0" prefWidth="123.0" />
-      <Label layoutX="158.0" layoutY="86.0" prefHeight="21.0" prefWidth="98.0" text="Ville / Régions" />
-      <Label layoutX="457.0" layoutY="14.0" prefHeight="51.0" prefWidth="305.0" styleClass="title-section" text="Liste des magasins">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Label>
-   </children>
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="524.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.112"
+      fx:controller="groupe1c1.controller.MagasinsController">
+    <children>
+        <ListView fx:id="listViewMagasins" layoutX="87.0" layoutY="136.0" prefHeight="380.0" prefWidth="1027.0"/>
+        <TextField fx:id="textMagasin" layoutX="275.0" layoutY="81.0" onKeyReleased="#appliquerFiltre" prefHeight="31.0"
+                   prefWidth="123.0"/>
+        <Label layoutX="158.0" layoutY="86.0" prefHeight="21.0" prefWidth="98.0" text="Ville / Régions"/>
+        <Label layoutX="457.0" layoutY="14.0" prefHeight="51.0" prefWidth="305.0" styleClass="title-section"
+               text="Liste des magasins">
+            <font>
+                <Font size="35.0"/>
+            </font>
+        </Label>
+    </children>
 </Pane>

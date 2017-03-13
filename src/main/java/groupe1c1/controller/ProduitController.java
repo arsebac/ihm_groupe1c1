@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Contrôleur de la partie "Produits phares"  de la vue principale
+ *
  * @author Francois Melkonian
  */
 public class ProduitController {
@@ -35,7 +36,7 @@ public class ProduitController {
 		}
 	}
 
-	public void drawItem(ItemPhare item ,int x, int y){
+	public void drawItem(ItemPhare item, int x, int y) {
 		try {
 			String fxmlFile = "/fxml/itemPhare.fxml";
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -43,7 +44,7 @@ public class ProduitController {
 			loader.setController(ic);
 			BorderPane itemBorder = loader.load();
 			ic.draw(item);
-			itemsGrid.add(itemBorder,x,y);
+			itemsGrid.add(itemBorder, x, y);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

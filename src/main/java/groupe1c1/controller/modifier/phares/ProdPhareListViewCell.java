@@ -60,8 +60,9 @@ public class ProdPhareListViewCell extends ListCell<ItemPhare> {
 			setGraphicAndText(itemPane, null);
 		}
 	}
-	private void setAttribute(ItemPhare item){
-		name.setText(item.getName()+"\n"+item.getCost()+"€");
+
+	private void setAttribute(ItemPhare item) {
+		name.setText(item.getName() + "\n" + item.getCost() + "€");
 		img.setImage(LocatedImage.create(item.getUrl()));
 		plusB.setVisible(false);
 		minusB.setVisible(false);

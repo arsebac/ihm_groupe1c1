@@ -33,21 +33,6 @@ public class ModifyItem {
 	private TextField price;
 	@FXML
 	private TextField name;
-	@FXML
-	void modifyImage(MouseEvent event) {
-		System.out.println("modifie le path de l'image");
-	}
-
-	@FXML
-	void save(MouseEvent event) {
-		double prix = (price.getText().length() > 0 ? Double.parseDouble(price.getText()) : 0.0);
-		String itemName = name.getText();
-		String path = ((LocatedImage) image.getImage()).getUrl();
-		ItemPhare newItem = new ItemPhare(itemName,prix,path);
-		subStage.close();
-		ItemsPharesManager.updateItem(item,newItem);
-
-	}
 
 	public ModifyItem(ItemPhare item) throws IOException {
 		subStage = new Stage();
@@ -66,7 +51,24 @@ public class ModifyItem {
 		updateView(item);
 
 	}
-	public void updateView(ItemPhare item){
+
+	@FXML
+	void modifyImage(MouseEvent event) {
+		System.out.println("modifie le path de l'image");
+	}
+
+	@FXML
+	void save(MouseEvent event) {
+		double prix = (price.getText().length() > 0 ? Double.parseDouble(price.getText()) : 0.0);
+		String itemName = name.getText();
+		String path = ((LocatedImage) image.getImage()).getUrl();
+		ItemPhare newItem = new ItemPhare(itemName, prix, path);
+		subStage.close();
+		ItemsPharesManager.updateItem(item, newItem);
+
+	}
+
+	public void updateView(ItemPhare item) {
 		LocatedImage img = LocatedImage.create(item.getUrl());
 		image.setImage(img);
 		name.setText(item.getName());

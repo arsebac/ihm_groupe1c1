@@ -52,7 +52,8 @@ public class AfficheListViewCell extends ListCell<ItemDiscount> {
 			setGraphicAndText(pane, null);
 		}
 	}
-	private void setAttribute(ItemDiscount affiche){
+
+	private void setAttribute(ItemDiscount affiche) {
 		name.setText(affiche.getName());
 		image.setImage(LocatedImage.create(affiche.getUrl()));
 	}

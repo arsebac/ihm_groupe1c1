@@ -14,14 +14,15 @@ import java.util.List;
  */
 public class MagasinsDeserializer {
 
-    public List<Magasin> deserialize() throws IOException {
-        String jsonMagasin = new Reader().read("/magasin.json");
+	public List<Magasin> deserialize() throws IOException {
+		String jsonMagasin = new Reader().read("/magasin.json");
 
-        if (jsonMagasin != null) {
-            Gson gson = new Gson();
-            return gson.fromJson(jsonMagasin, new TypeToken<List<Magasin>>(){}.getType());
-        }
-        return null;
-    }
+		if (jsonMagasin != null) {
+			Gson gson = new Gson();
+			return gson.fromJson(jsonMagasin, new TypeToken<List<Magasin>>() {
+			}.getType());
+		}
+		return null;
+	}
 
 }

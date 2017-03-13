@@ -7,9 +7,9 @@ import javafx.scene.image.Image;
  * @author user
  * @date 11/03/2017
  */
-public class MinimalMagasinListViewCell extends MagasinListViewCell{
+public class MinimalMagasinListViewCell extends MagasinListViewCell {
 	@Override
-	public void setAttribute(Magasin magasin)  {
+	public void setAttribute(Magasin magasin) {
 		name.setText(magasin.getName());
 		adresse.setText(magasin.getAdresse());
 		centreCommercial.setText(magasin.getCentreCommercial());

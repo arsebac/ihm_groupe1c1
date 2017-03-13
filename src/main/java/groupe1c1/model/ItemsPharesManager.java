@@ -9,18 +9,21 @@ import java.util.List;
 
 /**
  * Singleton gardant en mémoire les produits phares à afficher
+ *
  * @author François Melkonian
  * @date 01/03/2017
  */
 public class ItemsPharesManager {
-	private static ItemsPharesManager ourInstance = new ItemsPharesManager();
 	public static final int MAX_ITEM = 12;
+	private static ItemsPharesManager ourInstance = new ItemsPharesManager();
 	private static List<ItemPhare> produitPhares;
+
 	private ItemsPharesManager() {
 		System.out.println("chargement");
 		produitPhares = new ArrayList<>();
 		init();
 	}
+
 	public static ItemsPharesManager getInstance() {
 		return ourInstance;
 	}
@@ -38,10 +41,12 @@ public class ItemsPharesManager {
 			e.printStackTrace();
 		}
 	}
-	public static List<ItemPhare> getItemPhare(){
+
+	public static List<ItemPhare> getItemPhare() {
 		return new ArrayList<>(produitPhares);
 	}
-	public static void addItem(ItemPhare item){
+
+	public static void addItem(ItemPhare item) {
 		produitPhares.add(item);
 	}
 

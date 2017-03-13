@@ -14,26 +14,26 @@ import java.io.IOException;
  * Created by DavidLANG on 13/03/2017.
  */
 public class CreateEnseigne {
-    public CreateEnseigne(Stage primaryStage) throws IOException {
-        String fxmlFile = "/fxml/creerEnseigne.fxml";
-        FXMLLoader loader = new FXMLLoader();
-        CreationEnseigne enseigne = new CreationEnseigne();
-        loader.setController(enseigne);
-        VBox parent = loader.load(getClass().getResourceAsStream(fxmlFile));
-        TabPane tabPane = (TabPane) parent.getChildren().get(2);
-        tabPane.getTabs().get(1).setContent(loadGestionMagasin());
+	public CreateEnseigne(Stage primaryStage) throws IOException {
+		String fxmlFile = "/fxml/creerEnseigne.fxml";
+		FXMLLoader loader = new FXMLLoader();
+		CreationEnseigne enseigne = new CreationEnseigne();
+		loader.setController(enseigne);
+		VBox parent = loader.load(getClass().getResourceAsStream(fxmlFile));
+		TabPane tabPane = (TabPane) parent.getChildren().get(2);
+		tabPane.getTabs().get(1).setContent(loadGestionMagasin());
 
-        Scene scene = new Scene(parent, 1210, 720);
-        scene.getStylesheets().add("/styles/styles.css");
-        primaryStage.setTitle("Création d'une enseigne");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        enseigne.setStage(primaryStage);
-    }
+		Scene scene = new Scene(parent, 1210, 720);
+		scene.getStylesheets().add("/styles/styles.css");
+		primaryStage.setTitle("Création d'une enseigne");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		enseigne.setStage(primaryStage);
+	}
 
-    private Node loadGestionMagasin() throws IOException {
-        String fxmlFile = "/fxml/gestion-magasins.fxml";
-        FXMLLoader loader = new FXMLLoader();
-        return loader.load(getClass().getResourceAsStream(fxmlFile));
-    }
+	private Node loadGestionMagasin() throws IOException {
+		String fxmlFile = "/fxml/gestion-magasins.fxml";
+		FXMLLoader loader = new FXMLLoader();
+		return loader.load(getClass().getResourceAsStream(fxmlFile));
+	}
 }

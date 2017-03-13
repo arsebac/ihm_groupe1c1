@@ -17,6 +17,7 @@ public class EmployesController {
 	private StatModel model;
 	@FXML
 	private PieChart employeChart;
+
 	@FXML
 	public void initialize() throws IOException {
 		model = new StatModel();
@@ -24,10 +25,10 @@ public class EmployesController {
 	}
 
 	private ObservableList<PieChart.Data> createEmployeChartData(Map<String, Integer> mag) {
-		ObservableList<PieChart.Data> pieChartData =FXCollections.observableArrayList();
-		for (Map.Entry<String ,Integer> entry:
+		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+		for (Map.Entry<String, Integer> entry :
 				mag.entrySet()) {
-			PieChart.Data dataTemp = new PieChart.Data(entry.getKey(),entry.getValue());
+			PieChart.Data dataTemp = new PieChart.Data(entry.getKey(), entry.getValue());
 			pieChartData.addAll(dataTemp);
 		}
 		return pieChartData;

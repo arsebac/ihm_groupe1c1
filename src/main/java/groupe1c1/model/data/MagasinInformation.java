@@ -7,14 +7,14 @@ import java.util.*;
  * @date 13/03/2017
  */
 public class MagasinInformation {
-	private final  String name;
+	private final String name;
 	private final double ca;
 	private final int prodRenvoye;
+	private final int nbEmploye;
 	private List<Integer> returnProductDays;
-	private Map<Integer,Integer> productPerDay;
-	private  final int nbEmploye;
+	private Map<Integer, Integer> productPerDay;
 
-	public MagasinInformation(String name,double ca, int prodRenvoye, int nbEmploye) {
+	public MagasinInformation(String name, double ca, int prodRenvoye, int nbEmploye) {
 		this.name = name;
 		this.ca = ca;
 		this.prodRenvoye = prodRenvoye;
@@ -29,10 +29,10 @@ public class MagasinInformation {
 			returnProductDays.add(random.nextInt(30));
 		}
 		productPerDay = new HashMap<>();
-		for (int i = 0; i < 30; i++) {
-			int finalI = i;
-			int nb = Math.toIntExact( returnProductDays.stream().filter(integer -> integer.equals(finalI)).count());
-			productPerDay.put(i,nb);
+		for (int i = 1; i < 31; i++) {
+			int finalI = i - 1;
+			int nb = Math.toIntExact(returnProductDays.stream().filter(integer -> integer.equals(finalI)).count());
+			productPerDay.put(i, nb);
 		}
 	}
 

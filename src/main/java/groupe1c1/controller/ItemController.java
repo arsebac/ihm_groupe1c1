@@ -25,12 +25,13 @@ public class ItemController {
 	@FXML
 	private Label number;
 
-	public void draw(ItemPhare item){
+	public void draw(ItemPhare item) {
 		img.setImage(new Image(item.getUrl()));
 		name.setText(item.renderText());
-		plusB.setOnMouseClicked(e-> updateCount(Panier.addItem(item)));
-		minusB.setOnMouseClicked(e-> updateCount(Panier.delItem(item)));
+		plusB.setOnMouseClicked(e -> updateCount(Panier.addItem(item)));
+		minusB.setOnMouseClicked(e -> updateCount(Panier.delItem(item)));
 	}
+
 	private void updateCount(int i) {
 		number.setText(String.valueOf(i));
 	}

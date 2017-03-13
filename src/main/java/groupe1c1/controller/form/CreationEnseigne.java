@@ -27,7 +27,8 @@ public class CreationEnseigne {
 		System.out.println("logo changement");
 
 	}
-	private void updateImage(LocatedImage img){
+
+	private void updateImage(LocatedImage img) {
 		logoImg.setImage(img);
 	}
 
@@ -41,8 +42,6 @@ public class CreationEnseigne {
 	void reload(MouseEvent event) throws Exception {
 		new MainApp().start(stage);
 	}
-
-
 
 
 	public void setStage(Stage primaryStage) {

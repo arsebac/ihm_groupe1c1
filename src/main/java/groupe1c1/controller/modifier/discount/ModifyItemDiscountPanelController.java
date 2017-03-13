@@ -15,6 +15,7 @@ import java.io.IOException;
 
 /**
  * Controlleur de la partie "Produits mis en avant" affiché dans la vue de la modification de l'enseigne
+ *
  * @author François Melkonian
  */
 public class ModifyItemDiscountPanelController {
@@ -30,7 +31,7 @@ public class ModifyItemDiscountPanelController {
 
 	@FXML
 	public void initialize() throws IOException {
-		observableList =  ListUtils.initObservableList(Promos.getItemDiscount());
+		observableList = ListUtils.initObservableList(Promos.getItemDiscount());
 
 		listProd.setItems(observableList);
 		listProd.setCellFactory(e -> new AfficheListViewCell());
@@ -42,7 +43,7 @@ public class ModifyItemDiscountPanelController {
 	 */
 	@FXML
 	void addButton(MouseEvent event) {
-		ItemDiscount newItemDiscount = new ItemDiscount("Nouveau produit",0,0,"/images/produit1.png");
+		ItemDiscount newItemDiscount = new ItemDiscount("Nouveau produit", 0, 0, "/images/produit1.png");
 		observableList.add(newItemDiscount);
 		Promos.addItem(newItemDiscount);
 		updateItemDiscount(newItemDiscount);
@@ -52,20 +53,23 @@ public class ModifyItemDiscountPanelController {
 	/**
 	 * Récupère le produit sélectionné et
 	 * Ouvre la fenêtre de modification sur ce produit
+	 *
 	 * @param event
 	 */
 	@FXML
 	void modifyButton(MouseEvent event) {
-		if(listProd.getSelectionModel().getSelectedItem()!=null)
+		if (listProd.getSelectionModel().getSelectedItem() != null)
 			updateItemDiscount(listProd.getSelectionModel().getSelectedItem());
 	}
-	private void updateItemDiscount(ItemDiscount itemToModify){
+
+	private void updateItemDiscount(ItemDiscount itemToModify) {
 		try {
 			new ModifyItemDiscount(itemToModify);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+
 	@FXML
 	void delButton(MouseEvent event) {
 		ItemDiscount i = listProd.getSelectionModel().getSelectedItem();
@@ -73,8 +77,9 @@ public class ModifyItemDiscountPanelController {
 		ItemsPharesManager.remove(i);
 		updateAfficheCounter();
 	}
-	public void updateAfficheCounter(){
-		prodText.setText(observableList.size()+" produit"+(observableList.size() > 1 ? "s":""));
+
+	public void updateAfficheCounter() {
+		prodText.setText(observableList.size() + " produit" + (observableList.size() > 1 ? "s" : ""));
 	}
 
 

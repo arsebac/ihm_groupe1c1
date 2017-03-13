@@ -1,7 +1,6 @@
 package groupe1c1.controller;
 
 import groupe1c1.ClientEnseigne;
-import groupe1c1.MainApp;
 import groupe1c1.model.MagasinModel;
 import groupe1c1.model.Panier;
 import groupe1c1.model.data.ItemPhare;
@@ -51,12 +50,12 @@ public class TopController {
 	@FXML
 	void finaliseCommand(MouseEvent event) {
 		Magasin chosen = magasinsListView.getSelectionModel().getSelectedItem();
-		if(chosen != null){
+		if (chosen != null) {
 
-		Alert alert = new Alert(Alert.AlertType.INFORMATION,"Votre commande n°12 a été enregistré ! Elle sera envoyé sous 5 jours ouvrés à l'adresse :\n\n"+chosen.getAdresse()+".\n\nVous pouvez appeler le "+chosen.getTelephone()+" pour suivre l'avancement de votre colis.");
-		alert.setHeaderText("Commande n°12 enregistrée !");
-		alert.showAndWait();
-		panierStage.close();
+			Alert alert = new Alert(Alert.AlertType.INFORMATION, "Votre commande n°12 a été enregistré ! Elle sera envoyé sous 5 jours ouvrés à l'adresse :\n\n" + chosen.getAdresse() + ".\n\nVous pouvez appeler le " + chosen.getTelephone() + " pour suivre l'avancement de votre colis.");
+			alert.setHeaderText("Commande n°12 enregistrée !");
+			alert.showAndWait();
+			panierStage.close();
 		}
 
 	}
@@ -84,6 +83,7 @@ public class TopController {
 			e.printStackTrace();
 		}
 	}
+
 	@FXML
 	void panier(MouseEvent event) {
 		show();

@@ -4,7 +4,10 @@ import groupe1c1.model.data.ItemPhare;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * @author user
@@ -12,23 +15,25 @@ import java.io.*;
  */
 public class ItemParser {
 	private final JSONArray itemsJson;
+
 	public ItemParser(String filename) throws IOException {
 		InputStream is = getClass().getResourceAsStream(filename);
 		BufferedReader re = new BufferedReader(new InputStreamReader(is));
 		String source = "";
 		String line;
-		while ((line = re.readLine())!= null){
-			source += line +"\n";
+		while ((line = re.readLine()) != null) {
+			source += line + "\n";
 		}
 		JSONObject jsonObject = new JSONObject(source);
 		itemsJson = jsonObject.getJSONArray("items");
 	}
-	public int itemSize(){
+
+	public int itemSize() {
 		return itemsJson.length();
 	}
 
 	public ItemPhare getItem(int i) {
 		JSONObject itemObject = itemsJson.getJSONObject(i);
-		return new ItemPhare(itemObject.getString("nom"),itemObject.getDouble("prix"),itemObject.getString("url"));
+		return new ItemPhare(itemObject.getString("nom"), itemObject.getDouble("prix"), itemObject.getString("url"));
 	}
 }

@@ -5,89 +5,96 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" >
-   <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Création d'une enseigne" textAlignment="CENTER" wrappingWidth="1210">
-         <font>
-            <Font size="34.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="30.0" top="30.0" />
-         </VBox.margin>
-      </Text>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Logo " wrappingWidth="107.80340576171875">
-               <font>
-                  <Font name="Arimo" size="31.0" />
-               </font>
-            </Text>
-            <Button mnemonicParsing="false" onMouseClicked="#modifyLogo" text="modifier">
-               <HBox.margin>
-                  <Insets right="50.0" />
-               </HBox.margin>
-            </Button>
-            <ImageView fx:id="logoImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-              </ImageView>
-         </children>
-         <VBox.margin>
-            <Insets bottom="30.0" />
-         </VBox.margin>
-      </HBox>
-      <TabPane prefHeight="529.0" prefWidth="1210.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Gestion des produits">
-               <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Produits mis en avant" textAlignment="CENTER" wrappingWidth="1210.0">
-                           <font>
-                              <Font name="Arimo" size="31.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="20.0" />
-                           </VBox.margin>
-                        </Text>
-                        <fx:include source="/fxml/modifyItemDiscountPanel.fxml" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Produits phares" textAlignment="CENTER" wrappingWidth="1210.0">
-                           <font>
-                              <Font name="Arimo" size="31.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="40.0" />
-                              <Insets top="40.0" />
-                           </VBox.margin>
-                        </Text>
-                        <fx:include source="/fxml/modifyItemPanel.fxml"/>
-                        <Button fx:id="ssaveButton" mnemonicParsing="false" onMouseClicked="#reload" prefHeight="80.0" prefWidth="150.0" text="Revenir sur l'enseigne" textAlignment="CENTER">
-                           <VBox.margin>
-                              <Insets left="500.0" top="10.0" />
-                           </VBox.margin>
-                        </Button>
-                     </children>
-                  </VBox>
-               </content>
-            </Tab>
-          <Tab text="Gestion des magasins" />
-           <Tab text="Chiffre d'affaire">
-              <content>
-                 <fx:include source="/fxml/chiffre-affaire.fxml"/>
-              </content>
-           </Tab>
-           <Tab text="Produit renvoyés">
-              <content>
-                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                       <fx:include source="/fxml/returnProduct.fxml"/>
-                    </children></AnchorPane>
-              </content>
-           </Tab>
-           <Tab text="Nombre d'employés">
-              <content>
-                 <fx:include source="/fxml/employeChart.fxml" />
-              </content>
-           </Tab>
-        </tabs>
-      </TabPane>
-   </children>
+<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="784.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.112">
+    <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Création d'une enseigne" textAlignment="CENTER"
+              wrappingWidth="1210">
+            <font>
+                <Font size="34.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="30.0" top="30.0"/>
+            </VBox.margin>
+        </Text>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Logo " wrappingWidth="107.80340576171875">
+                    <font>
+                        <Font name="Arimo" size="31.0"/>
+                    </font>
+                </Text>
+                <Button mnemonicParsing="false" onMouseClicked="#modifyLogo" text="modifier">
+                    <HBox.margin>
+                        <Insets right="50.0"/>
+                    </HBox.margin>
+                </Button>
+                <ImageView fx:id="logoImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                </ImageView>
+            </children>
+            <VBox.margin>
+                <Insets bottom="30.0"/>
+            </VBox.margin>
+        </HBox>
+        <TabPane prefHeight="529.0" prefWidth="1210.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Gestion des produits">
+                    <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Produits mis en avant"
+                                      textAlignment="CENTER" wrappingWidth="1210.0">
+                                    <font>
+                                        <Font name="Arimo" size="31.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="20.0"/>
+                                    </VBox.margin>
+                                </Text>
+                                <fx:include source="/fxml/modifyItemDiscountPanel.fxml"/>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Produits phares"
+                                      textAlignment="CENTER" wrappingWidth="1210.0">
+                                    <font>
+                                        <Font name="Arimo" size="31.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="40.0"/>
+                                        <Insets top="40.0"/>
+                                    </VBox.margin>
+                                </Text>
+                                <fx:include source="/fxml/modifyItemPanel.fxml"/>
+                                <Button fx:id="ssaveButton" mnemonicParsing="false" onMouseClicked="#reload"
+                                        prefHeight="80.0" prefWidth="150.0" text="Revenir sur l'enseigne"
+                                        textAlignment="CENTER">
+                                    <VBox.margin>
+                                        <Insets left="500.0" top="10.0"/>
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Gestion des magasins"/>
+                <Tab text="Chiffre d'affaire">
+                    <content>
+                        <fx:include source="/fxml/chiffre-affaire.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Produit renvoyés">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <fx:include source="/fxml/returnProduct.fxml"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Nombre d'employés">
+                    <content>
+                        <fx:include source="/fxml/employeChart.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
 </VBox>

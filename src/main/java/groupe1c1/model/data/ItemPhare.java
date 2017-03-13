@@ -2,6 +2,7 @@ package groupe1c1.model.data;
 
 /**
  * Représentatation d'un item phare
+ *
  * @author François Melkonian
  * @date 26/02/2017
  */
@@ -61,6 +62,6 @@ public class ItemPhare {
 	}
 
 	public String renderText() {
-		return nom+"\n"+prix+"€";
+		return nom + "\n" + prix + "€";
 	}
 }

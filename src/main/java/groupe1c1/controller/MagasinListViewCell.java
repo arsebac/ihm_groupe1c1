@@ -17,78 +17,73 @@ import java.io.IOException;
  */
 public class MagasinListViewCell extends ListCell<Magasin> {
 
-    private FXMLLoader fxmlLoader;
+	@FXML
+	ImageView image;
+	@FXML
+	Text name;
+	@FXML
+	Text centreCommercial;
+	@FXML
+	Text adresse;
+	private FXMLLoader fxmlLoader;
+	@FXML
+	private Text telephone;
 
-    @FXML
-    ImageView image;
+	@FXML
+	private Text mail;
 
-    @FXML
-    Text name;
+	@FXML
+	private Text siteWeb;
 
-    @FXML
-    Text centreCommercial;
+	@FXML
+	private Pane pane;
 
-    @FXML
-    Text adresse;
+	@Override
+	public void updateItem(Magasin magasin, boolean empty) {
+		super.updateItem(magasin, empty);
 
-    @FXML
-    private Text telephone;
+		if (empty || magasin == null) {
+			setGraphicAndText(null, null);
+		} else {
+			if (fxmlLoader == null) {
+				this.initFXMLLoader();
+			}
 
-    @FXML
-    private Text mail;
-
-    @FXML
-    private Text siteWeb;
-
-    @FXML
-    private Pane pane;
-
-    @Override
-    public void updateItem(Magasin magasin, boolean empty) {
-        super.updateItem(magasin, empty);
-
-        if (empty || magasin == null) {
-            setGraphicAndText(null, null);
-        } else {
-            if (fxmlLoader == null) {
-                this.initFXMLLoader();
-            }
-
-            setAttribute(magasin);
-            setGraphicAndText(pane, null);
-        }
-    }
+			setAttribute(magasin);
+			setGraphicAndText(pane, null);
+		}
+	}
 
 
-    private void setGraphicAndText(Node graphic, String text) {
-        setText(text);
-        setGraphic(graphic);
-    }
+	private void setGraphicAndText(Node graphic, String text) {
+		setText(text);
+		setGraphic(graphic);
+	}
 
-    protected void setAttribute(Magasin magasin) {
-        name.setText(magasin.getName());
-        adresse.setText(magasin.getAdresse());
-        centreCommercial.setText(magasin.getCentreCommercial());
-        telephone.setText(magasin.getTelephone());
-        mail.setText(magasin.getMail());
-        siteWeb.setText(magasin.getSiteWeb());
-        image.setImage(new Image("/images/magasin.png"));
-    }
+	protected void setAttribute(Magasin magasin) {
+		name.setText(magasin.getName());
+		adresse.setText(magasin.getAdresse());
+		centreCommercial.setText(magasin.getCentreCommercial());
+		telephone.setText(magasin.getTelephone());
+		mail.setText(magasin.getMail());
+		siteWeb.setText(magasin.getSiteWeb());
+		image.setImage(new Image("/images/magasin.png"));
+	}
 
 
-    protected void initFXMLLoader() {
-        initFXMLLoader("/fxml/magasin.fxml");
-    }
+	protected void initFXMLLoader() {
+		initFXMLLoader("/fxml/magasin.fxml");
+	}
 
-    void initFXMLLoader(String filename) {
-        fxmlLoader = new FXMLLoader(getClass().getResource(filename));
-        fxmlLoader.setController(this);
+	void initFXMLLoader(String filename) {
+		fxmlLoader = new FXMLLoader(getClass().getResource(filename));
+		fxmlLoader.setController(this);
 
-        try {
-            fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+		try {
+			fxmlLoader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

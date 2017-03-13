@@ -17,10 +17,12 @@ public class LocatedImage extends Image {
 		super(stream);
 		this.urlLocated = url;
 	}
-	public String getUrl(){
-		return urlLocated;
+
+	public static LocatedImage create(String url) {
+		return new LocatedImage(CreateEnseigne.class.getResourceAsStream(url), url);
 	}
-	public static LocatedImage create(String url){
-		return new LocatedImage(CreateEnseigne.class.getResourceAsStream(url),url);
+
+	public String getUrl() {
+		return urlLocated;
 	}
 }

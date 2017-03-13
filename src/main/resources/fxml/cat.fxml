@@ -2,9 +2,9 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.text.Font?>
-
-<Label prefHeight="28.0" prefWidth="169.0" text="Catégorie" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
-   <font>
-      <Font size="25.0" />
-   </font>
+<Label xmlns:fx="http://javafx.com/fxml/1" prefHeight="28.0" prefWidth="169.0" text="Catégorie"
+       xmlns="http://javafx.com/javafx/8.0.111">
+    <font>
+        <Font size="25.0"/>
+    </font>
 </Label>

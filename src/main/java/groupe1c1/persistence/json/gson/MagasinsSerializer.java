@@ -3,11 +3,6 @@ package groupe1c1.persistence.json.gson;
 import com.google.gson.Gson;
 import groupe1c1.model.data.Magasin;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 /**
@@ -15,10 +10,10 @@ import java.util.List;
  */
 public class MagasinsSerializer {
 
-    public void serialize(List<Magasin> magasins) {
-        Gson gson = new Gson();
+	public void serialize(List<Magasin> magasins) {
+		Gson gson = new Gson();
 
 //        System.out.println(gson.toJson(magasins));
-    }
+	}
 
 }

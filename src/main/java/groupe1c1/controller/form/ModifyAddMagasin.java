@@ -4,7 +4,6 @@ import groupe1c1.model.MagasinModel;
 import groupe1c1.model.data.Magasin;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -18,7 +17,6 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 /**
@@ -26,135 +24,124 @@ import java.io.IOException;
  */
 public class ModifyAddMagasin {
 
-    @FXML
-    private Text title;
+	private final Stage subStage;
+	@FXML
+	private Text title;
+	@FXML
+	private ImageView preview;
+	@FXML
+	private TextField name;
+	@FXML
+	private TextField centreCommercial;
+	@FXML
+	private TextField adresse;
+	@FXML
+	private TextField telephone;
+	@FXML
+	private TextField mail;
+	@FXML
+	private TextField siteWeb;
+	@FXML
+	private Button btModify;
+	private Magasin magasin;
+	private FileChooser fileChooser;
 
-    @FXML
-    private ImageView preview;
+	// TO UPDATE
+	private TextField textField;
+	private ObservableList<Magasin> observableList;
 
-    @FXML
-    private TextField name;
+	public ModifyAddMagasin(Magasin magasin, ObservableList observableList, TextField textField) throws IOException {
+		this.textField = textField;
+		this.observableList = observableList;
+		fileChooser = new FileChooser();
+		fileChooser.setTitle("Choisir une image");
+		subStage = new Stage();
+		this.magasin = magasin;
+		init();
+		if (magasin == null)
+			initAdd();
+		else
+			initModify(magasin);
+	}
 
-    @FXML
-    private TextField centreCommercial;
+	private void initAdd() {
+		title.setText("Ajouter un magasin");
+		btModify.setText("Ajouter");
+	}
 
-    @FXML
-    private TextField adresse;
+	private void initModify(Magasin magasin) {
+		title.setText("Modifier un magasin");
+		btModify.setText("Modifier");
+		mail.setText(magasin.getMail());
+		adresse.setText(magasin.getAdresse());
+		centreCommercial.setText(magasin.getCentreCommercial());
+		name.setText(magasin.getName());
+		siteWeb.setText(magasin.getSiteWeb());
+		telephone.setText(magasin.getTelephone());
+	}
 
-    @FXML
-    private TextField telephone;
+	private void init() throws IOException {
+		subStage.setTitle("Modifier un magasin");
+		String fxmlFile = "/fxml/modifyMagasin.fxml";
+		FXMLLoader loader = new FXMLLoader();
+		loader.setController(this);
+		VBox parent = loader.load(getClass().getResourceAsStream(fxmlFile));
+		FlowPane root = new FlowPane();
+		root.setAlignment(Pos.CENTER);
+		Scene scene = new Scene(root, 352, 525);
+		root.getChildren().add(parent);
+		subStage.setScene(scene);
+		subStage.show();
+		setBtModifyHandler();
+	}
 
-    @FXML
-    private TextField mail;
+	@FXML
+	void modifyImage(ActionEvent event) {
+		fileChooser.showOpenDialog(subStage);
+	}
 
-    @FXML
-    private TextField siteWeb;
+	private void add(Magasin magasin) throws IOException {
+		MagasinModel.getInstance().add(magasin);
+		observableList.add(magasin);
+	}
 
-    @FXML
-    private Button btModify;
+	private void update() {
 
-    private final Stage subStage;
-    private Magasin magasin;
-    private FileChooser fileChooser;
-
-    // TO UPDATE
-    private TextField textField;
-    private ObservableList<Magasin> observableList;
-
-    public ModifyAddMagasin(Magasin magasin, ObservableList observableList, TextField textField) throws IOException {
-        this.textField = textField;
-        this.observableList = observableList;
-        fileChooser = new FileChooser();
-        fileChooser.setTitle("Choisir une image");
-        subStage = new Stage();
-        this.magasin = magasin;
-        init();
-        if (magasin == null)
-            initAdd();
-        else
-            initModify(magasin);
-    }
-
-    private void initAdd() {
-        title.setText("Ajouter un magasin");
-        btModify.setText("Ajouter");
-    }
-
-    private void initModify(Magasin magasin) {
-        title.setText("Modifier un magasin");
-        btModify.setText("Modifier");
-        mail.setText(magasin.getMail());
-        adresse.setText(magasin.getAdresse());
-        centreCommercial.setText(magasin.getCentreCommercial());
-        name.setText(magasin.getName());
-        siteWeb.setText(magasin.getSiteWeb());
-        telephone.setText(magasin.getTelephone());
-    }
-
-    private void init() throws IOException {
-        subStage.setTitle("Modifier un magasin");
-        String fxmlFile = "/fxml/modifyMagasin.fxml";
-        FXMLLoader loader = new FXMLLoader();
-        loader.setController(this);
-        VBox parent = loader.load(getClass().getResourceAsStream(fxmlFile));
-        FlowPane root = new FlowPane();
-        root.setAlignment(Pos.CENTER);
-        Scene scene = new Scene(root, 352, 525);
-        root.getChildren().add(parent);
-        subStage.setScene(scene);
-        subStage.show();
-        setBtModifyHandler();
-    }
-
-    @FXML
-    void modifyImage(ActionEvent event) {
-        fileChooser.showOpenDialog(subStage);
-    }
-
-    private void add(Magasin magasin) throws IOException {
-        MagasinModel.getInstance().add(magasin);
-        observableList.add(magasin);
-    }
-
-    private void update() {
-
-    }
+	}
 
 
-    private void setBtModifyHandler() {
-        btModify.setOnMouseClicked(event -> {
-            String textName = name.getText();
-            String textCentreCommercial = centreCommercial.getText();
-            String textAdresse = adresse.getText();
-            String textTelephone = telephone.getText();
-            String textMail = mail.getText();
-            String textSiteWeb = siteWeb.getText();
+	private void setBtModifyHandler() {
+		btModify.setOnMouseClicked(event -> {
+			String textName = name.getText();
+			String textCentreCommercial = centreCommercial.getText();
+			String textAdresse = adresse.getText();
+			String textTelephone = telephone.getText();
+			String textMail = mail.getText();
+			String textSiteWeb = siteWeb.getText();
 
-            if (!(textName.isEmpty() && textCentreCommercial.isEmpty() && textAdresse.isEmpty() && textTelephone.isEmpty()
-                    && textMail.isEmpty() && textSiteWeb.isEmpty())) {
-                if (magasin == null) {
-                    try {
-                        add(new Magasin(textName, "", textCentreCommercial, textAdresse, textTelephone, textMail, textSiteWeb));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+			if (!(textName.isEmpty() && textCentreCommercial.isEmpty() && textAdresse.isEmpty() && textTelephone.isEmpty()
+					&& textMail.isEmpty() && textSiteWeb.isEmpty())) {
+				if (magasin == null) {
+					try {
+						add(new Magasin(textName, "", textCentreCommercial, textAdresse, textTelephone, textMail, textSiteWeb));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				} else {
+					magasin.setAdresse(textAdresse);
+					magasin.setCentreCommercial(textCentreCommercial);
+					magasin.setMail(textMail);
+					magasin.setName(textName);
+					magasin.setPathImage("");
+					magasin.setSiteWeb(textSiteWeb);
+					magasin.setTelephone(textTelephone);
+					observableList.set(observableList.indexOf(magasin), magasin);
+				}
 
-                else {
-                    magasin.setAdresse(textAdresse);
-                    magasin.setCentreCommercial(textCentreCommercial);
-                    magasin.setMail(textMail);
-                    magasin.setName(textName);
-                    magasin.setPathImage("");
-                    magasin.setSiteWeb(textSiteWeb);
-                    magasin.setTelephone(textTelephone);
-                    observableList.set(observableList.indexOf(magasin), magasin);
-                }
-
-                textField.setText("");
-                subStage.close();
-            }
-        });
-    }
+				textField.setText("");
+				subStage.close();
+			}
+		});
+	}
 
 }
