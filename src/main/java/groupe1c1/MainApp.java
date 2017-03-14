@@ -10,7 +10,6 @@ public class MainApp extends Application {
 	}
 
 	public void start(Stage stage) throws Exception {
-		CreateEnseigne createEnseigne = new CreateEnseigne(new Stage());
 		ClientEnseigne clientEnseigne = new ClientEnseigne(stage);
 	}
 

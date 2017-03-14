@@ -22,6 +22,10 @@ public class Panier {
 		items = new HashMap<>();
 	}
 
+	public static void resetPanier(){
+        ourInstance = new Panier();
+    }
+
 	public static Panier getInstance() {
 		return ourInstance;
 	}
