@@ -37,10 +37,12 @@ public class EnseigneDeserializer {
 
 	private List<ItemDiscount> fakeList() {
 		List<ItemDiscount> list = new ArrayList<>();
-		list.add(new ItemDiscount("Pure Soupe", 12.2, 20, "/images/produit1.jpg"));
-		list.add(new ItemDiscount("Pure Soupe light", 14.2, 30, "/images/produit1.jpg"));
-		list.add(new ItemDiscount("Soupe", 7.2, 10, "/images/produit1.jpg"));
-		list.add(new ItemDiscount("Soupe ", 9.2, 20, "/images/produit1.jpg"));
+		list.add(new ItemDiscount("Adèle - 21", 12.2, 20, "/images/adele.jpg"));
+		list.add(new ItemDiscount("Justin Bieber", 14.2, 30, "/images/jb.jpg"));
+		list.add(new ItemDiscount("Pnl", 7.2, 10, "/images/pnl.jpg"));
+		list.add(new ItemDiscount("Skrillex", 7.2, 10, "/images/skrillex.jpg"));
+		list.add(new ItemDiscount("ACDC ", 9.2, 20, "/images/acdc.jpg"));
+		list.add(new ItemDiscount("Bob Marley ", 9.2, 20, "/images/bob.jpg"));
 		return list;
 	}
 
