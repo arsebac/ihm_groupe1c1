@@ -14,20 +14,20 @@
                 <Image url="/images/logo2.png"/>
             </image>
         </ImageView>
-        <Button layoutX="800.0" layoutY="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0"
+        <Button styleClass="top-button" layoutX="800.0" layoutY="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0"
                 text="Page principale" onMouseClicked="#backPrincipal"/>
-        <Button layoutX="50.0" layoutY="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0"
+        <Button styleClass="top-button" layoutX="50.0" layoutY="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0"
                 text="Se connecter" onMouseClicked="#connection"/>
-        <Button layoutX="550.0" layoutY="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0"
+        <Button styleClass="top-button" layoutX="550.0" layoutY="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0"
                 text="Informations" onMouseClicked="#informations"/>
-        <Button mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="59.0" prefWidth="112.0"
+        <Button styleClass="top-button" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="59.0" prefWidth="112.0"
                 text="Vider le panier"/>
         <VBox prefHeight="100.0" prefWidth="55.0">
             <children>
                 <ImageView fitHeight="59.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="/images/panier.png"/>
                 </ImageView>
-                <Button fx:id="panierButton" mnemonicParsing="false" onMouseClicked="#panier" prefHeight="23.0"
+                <Button styleClass="top-button" fx:id="panierButton" mnemonicParsing="false" onMouseClicked="#panier" prefHeight="23.0"
                         prefWidth="202.0" text="Panier">
                     <VBox.margin>
                         <Insets top="10.0"/>
