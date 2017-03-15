@@ -1,0 +1,7 @@
+#infos{
+    -fx-background-image: url("images/planches1.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 900 506;
+    -fx-background-position: 100%;
+}
+
