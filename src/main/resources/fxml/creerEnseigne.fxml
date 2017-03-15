@@ -85,7 +85,7 @@
                 </Tab>
             </tabs>
         </TabPane>
-              <Button fx:id="ssaveButton" mnemonicParsing="false" onMouseClicked="#reload" prefHeight="80.0" prefWidth="150.0" text="Revenir sur l'enseigne" textAlignment="CENTER">
+              <Button fx:id="ssaveButton" mnemonicParsing="false" onMouseClicked="#reload" prefHeight="35.0" prefWidth="332.0" text="Revenir sur l'enseigne" textAlignment="CENTER">
                   <VBox.margin>
                       <Insets bottom="5.0" left="500.0" top="10.0" />
                   </VBox.margin>
