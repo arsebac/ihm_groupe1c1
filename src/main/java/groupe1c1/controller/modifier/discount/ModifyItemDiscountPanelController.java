@@ -1,6 +1,5 @@
 package groupe1c1.controller.modifier.discount;
 
-import groupe1c1.controller.modifier.phares.AfficheListViewCell;
 import groupe1c1.model.ItemsPharesManager;
 import groupe1c1.model.Promos;
 import groupe1c1.model.data.ItemDiscount;

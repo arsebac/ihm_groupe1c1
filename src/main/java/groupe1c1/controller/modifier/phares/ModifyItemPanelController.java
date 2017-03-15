@@ -1,7 +1,5 @@
-package groupe1c1.controller.modifier;
+package groupe1c1.controller.modifier.phares;
 
-import groupe1c1.controller.modifier.phares.ModifyItem;
-import groupe1c1.controller.modifier.phares.ProdPhareListViewCell;
 import groupe1c1.model.ItemsPharesManager;
 import groupe1c1.model.data.ItemPhare;
 import groupe1c1.utils.ListUtils;
@@ -42,6 +40,7 @@ public class ModifyItemPanelController {
 			ItemPhare newItem = new ItemPhare("Nouveau Produit", 0, "/images/tel.jpg");
 			phareList.add(newItem);
 			ItemsPharesManager.addItem(newItem);
+			updateItem(newItem);
 		} else System.out.println("Maximum atteint !");
 
 	}
@@ -49,12 +48,16 @@ public class ModifyItemPanelController {
 	public void modifyProdButton(MouseEvent mouseEvent) {
 		ItemPhare itemToModify = listPhare.getSelectionModel().getSelectedItem();
 		if (listPhare.getSelectionModel().getSelectedItem() == null) return;
+		updateItem(itemToModify);
+
+	}
+
+	private void updateItem(ItemPhare item) {
 		try {
-			new ModifyItem(itemToModify, this);
+			new ModifyItem(item, this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public void ProddelButton(MouseEvent mouseEvent) {

@@ -1,6 +1,5 @@
 package groupe1c1.controller.modifier.phares;
 
-import groupe1c1.controller.modifier.ModifyItemPanelController;
 import groupe1c1.model.data.ItemPhare;
 import groupe1c1.utils.FXMLReader;
 import groupe1c1.utils.LocatedImage;

@@ -1,4 +1,4 @@
-package groupe1c1.controller.modifier.phares;
+package groupe1c1.controller.modifier.discount;
 
 import groupe1c1.model.data.ItemDiscount;
 import groupe1c1.utils.LocatedImage;
