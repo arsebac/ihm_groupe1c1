@@ -78,7 +78,6 @@ public class MagasinListViewCell extends ListCell<Magasin> {
 	void initFXMLLoader(String filename) {
 		fxmlLoader = new FXMLLoader(getClass().getResource(filename));
 		fxmlLoader.setController(this);
-
 		try {
 			fxmlLoader.load();
 		} catch (IOException e) {

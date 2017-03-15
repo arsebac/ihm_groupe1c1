@@ -23,7 +23,7 @@ public class CreateEnseigne {
 		TabPane tabPane = (TabPane) parent.getChildren().get(2);
 		tabPane.getTabs().get(1).setContent(loadGestionMagasin());
 
-		Scene scene = new Scene(parent, 1210, 720);
+		Scene scene = new Scene(parent, 1220, 863);
 		scene.getStylesheets().add("/styles/styles.css");
 		primaryStage.setTitle("Création d'une enseigne");
 		primaryStage.setScene(scene);
