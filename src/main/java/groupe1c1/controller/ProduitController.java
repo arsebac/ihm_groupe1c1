@@ -28,7 +28,7 @@ public class ProduitController {
 	 * Affiche la grille de produit phares dans une GridBox.
 	 */
 	private void createItemList() {
-		int sizeGrid = ItemsPharesManager.MAX_ITEM / 2;
+		int sizeGrid = ItemsPharesManager.NUM_MAX_ITEM / 2;
 		List<ItemPhare> phareList = ItemsPharesManager.getItemPhare();
 		for (int i = 0; i < phareList.size(); i++) {
 			ItemPhare item = phareList.get(i);

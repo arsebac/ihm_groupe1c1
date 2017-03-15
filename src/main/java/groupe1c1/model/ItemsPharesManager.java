@@ -14,12 +14,11 @@ import java.util.List;
  * @date 01/03/2017
  */
 public class ItemsPharesManager {
-	public static final int MAX_ITEM = 12;
+	public static final int NUM_MAX_ITEM = 12;
 	private static ItemsPharesManager ourInstance = new ItemsPharesManager();
 	private static List<ItemPhare> produitPhares;
 
 	private ItemsPharesManager() {
-		System.out.println("chargement");
 		produitPhares = new ArrayList<>();
 		init();
 	}

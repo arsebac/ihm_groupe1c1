@@ -25,12 +25,6 @@ public class EnseigneDeserializer {
 		data = new JSONObject(source);
 		gson = new Gson();
 	}
-
-	public static void main(String[] args) throws IOException {
-		EnseigneDeserializer e = new EnseigneDeserializer();
-		System.out.println(e.getItems());
-	}
-
 	public List<ItemDiscount> getItemDiscount() {
 		return fakeList();
 	}
