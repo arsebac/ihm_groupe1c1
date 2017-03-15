@@ -4,17 +4,18 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
-            xmlns="http://javafx.com/javafx/8.0.112" fx:controller="groupe1c1.controller.stat.ChiffreAffaire">
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="487.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1c1.controller.stat.ChiffreAffaire">
     <children>
-        <BarChart fx:id="caChart" layoutX="61.0" layoutY="73.0" prefHeight="334.0" prefWidth="548.0"
-                  title="Chiffre d'affaire">
+        <BarChart fx:id="caChart" layoutX="360.0" layoutY="81.0" prefHeight="334.0" prefWidth="548.0">
             <xAxis>
-                <CategoryAxis side="BOTTOM"/>
+                <CategoryAxis side="BOTTOM" />
             </xAxis>
             <yAxis>
-                <NumberAxis side="LEFT"/>
+                <NumberAxis side="LEFT" />
             </yAxis>
         </BarChart>
+      <Text layoutX="409.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-section" text="Chiffre d'affaire" textAlignment="CENTER" wrappingWidth="422.59423828125" />
     </children>
 </AnchorPane>

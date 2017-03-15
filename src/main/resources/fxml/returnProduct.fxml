@@ -2,15 +2,19 @@
 
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.StackedAreaChart?>
-<StackedAreaChart xmlns:fx="http://javafx.com/fxml/1" fx:id="returnProduct" prefHeight="400.0"
-                  prefWidth="1200.0" title="Produits retournés lors des 30 derniers jours"
-                  xmlns="http://javafx.com/javafx/8.0.91" fx:controller="groupe1c1.controller.stat.ReturnProduct">
-    <xAxis>
-        <NumberAxis autoRanging="false" forceZeroInRange="false" label="Jours" lowerBound="1.0" minorTickLength="1.0"
-                    minorTickVisible="false" side="BOTTOM" tickLength="2.0" tickMarkVisible="false" tickUnit="1.0"
-                    upperBound="30.0"/>
-    </xAxis>
-    <yAxis>
-        <NumberAxis autoRanging="false" label="Produits retournés" side="LEFT" upperBound="15.0"/>
-    </yAxis>
-</StackedAreaChart>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="497.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1c1.controller.stat.ReturnProduct">
+   <children>
+      <StackedAreaChart fx:id="returnProduct" layoutY="97.0" prefHeight="400.0" prefWidth="1200.0">
+          <xAxis>
+              <NumberAxis autoRanging="false" forceZeroInRange="false" label="Jours" lowerBound="1.0" minorTickLength="1.0" minorTickVisible="false" side="BOTTOM" tickLength="2.0" tickMarkVisible="false" tickUnit="1.0" upperBound="30.0" />
+          </xAxis>
+          <yAxis>
+              <NumberAxis autoRanging="false" label="Produits retournés" side="LEFT" upperBound="15.0" />
+          </yAxis>
+      </StackedAreaChart>
+      <Text layoutX="353.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-section" text="Produits retournés lors des 30 derniers jours" textAlignment="CENTER" wrappingWidth="504.6708984375" />
+   </children>
+</AnchorPane>

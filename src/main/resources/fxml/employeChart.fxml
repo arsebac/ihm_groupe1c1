@@ -2,9 +2,11 @@
 
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
-            xmlns="http://javafx.com/javafx/8.0.112" fx:controller="groupe1c1.controller.stat.EmployesController">
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1c1.controller.stat.EmployesController">
     <children>
-        <PieChart fx:id="employeChart" layoutX="80.0" layoutY="33.0" title="Nombre d'employés"/>
+        <PieChart fx:id="employeChart" layoutX="355.0" layoutY="121.0" />
+      <Text styleClass="title-section" layoutX="396.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre d'employés" textAlignment="CENTER" wrappingWidth="417.6708984375" />
     </children>
 </AnchorPane>
