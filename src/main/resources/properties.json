@@ -1,12 +1,12 @@
 {
   "affiches": [
     {
-      "path": "/images/produit1.jpg",
-      "name": "Produit 0"
+      "path": "/images/potter3.jpg",
+      "name": "Harry Potter tome 3"
     },
     {
-      "path": "/images/produit2.jpg",
-      "name": "Produit 1"
+      "path": "/images/dvptperso.png",
+      "name": "Le pouvoir du moment présent"
     },
     {
       "path": "/images/produit3.jpg",
@@ -32,29 +32,30 @@
   "logo": "/images/logo.jpg",
   "items": [
     {
-      "prix": 23,
-      "nom": "Item 2",
-      "url": "/images/tel.jpg"
+      "prix": 9.99,
+
+      "url": "/images/potter3.jpg",
+      "nom": "Harry Potter tome 3"
     },
     {
-      "prix": 23,
-      "nom": "Item 3",
-      "url": "/images/tel.jpg"
+      "prix": 21.25,
+      "url": "/images/dvptperso.png",
+      "nom": "Le pouvoir du moment présent"
     },
     {
-      "prix": 23,
-      "nom": "Item 4",
-      "url": "/images/tel.jpg"
+      "prix": 90.12,
+      "nom": "Java FX pour les nuls",
+      "url": "/images/fxtuto.jpg"
     },
     {
-      "prix": 23,
-      "nom": "Item 5",
-      "url": "/images/tel.jpg"
+      "prix": 2.99,
+      "nom": "XP pour les nuls",
+      "url": "/images/xp.jpg"
     },
     {
-      "prix": 23,
-      "nom": "Item 3",
-      "url": "/images/tel.jpg"
+      "prix": 0.99,
+      "nom": "Marteau",
+      "url": "/images/3310.jpg"
     },
     {
       "prix": 23,
