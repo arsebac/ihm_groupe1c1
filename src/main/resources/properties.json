@@ -55,7 +55,7 @@
     {
       "prix": 0.99,
       "nom": "Marteau",
-      "url": "/images/3310.jpg"
+      "url": "/images/3310.png"
     },
     {
       "prix": 23.15,
@@ -76,16 +76,6 @@
       "prix": 299.99,
       "nom": "Stage 'De la peur à l'amour'",
       "url": "/images/peur.jpg"
-    },
-    {
-      "prix": 23,
-      "nom": "Item 3",
-      "url": "/images/tel.jpg"
-    },
-    {
-      "prix": 13,
-      "nom": "produit 12",
-      "url": "/images/tel.jpg"
     }
   ]
 }
