@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1c1.controller.PromosController" maxHeight="-Infinity"
-      maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0"
-      prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.112">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1c1.controller.PromosController">
     <children>
         <HBox prefHeight="200.0" prefWidth="200.0">
             <children>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
                     <children>
-                        <Button layoutX="65.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#leftButton"
-                                prefHeight="70.0" prefWidth="70.0" text="&lt;"/>
+                        <Button layoutX="65.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#leftButton" prefHeight="70.0" prefWidth="70.0" styleClass="button-pagination" text="&lt;" />
                     </children>
                 </AnchorPane>
-                <ImageView fx:id="img0" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
-                <ImageView fx:id="imgpd" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
-                <ImageView fx:id="img2" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
-                <ImageView fx:id="img3" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
+                <ImageView fx:id="img0" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="imgpd" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="img2" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="img3" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
                     <children>
-                        <Button layoutX="65.0" layoutY="65.0" mnemonicParsing="false" onMouseClicked="#rightButton"
-                                prefHeight="70.0" prefWidth="70.0" text="&gt;"/>
+                        <Button layoutX="65.0" layoutY="65.0" mnemonicParsing="false" onMouseClicked="#rightButton" prefHeight="70.0" prefWidth="70.0" styleClass="button-pagination" text="&gt;" />
                     </children>
                 </AnchorPane>
             </children>
         </HBox>
-        <AnchorPane prefHeight="30.0" prefWidth="1200.0">
-            <children>
-                <Button onMouseClicked="#buy0" fx:id="buy0" layoutX="250.0" layoutY="2.0" mnemonicParsing="false"
-                        prefHeight="30.0" prefWidth="100.0" text="Acheter ..."/>
-                <Button onMouseClicked="#buy1" fx:id="buy1" layoutX="450.0" layoutY="2.0" mnemonicParsing="false"
-                        prefHeight="30.0" prefWidth="100.0" text="Acheter ..."/>
-                <Button onMouseClicked="#buy2" fx:id="buy2" layoutX="650.0" layoutY="2.0" mnemonicParsing="false"
-                        prefHeight="30.0" prefWidth="100.0" text="Acheter ..."/>
-                <Button onMouseClicked="#buy3" fx:id="buy3" layoutX="850.0" layoutY="2.0" mnemonicParsing="false"
-                        prefHeight="30.0" prefWidth="100.0" text="Acheter ..."/>
-            </children>
-        </AnchorPane>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+                <Button fx:id="buy0" mnemonicParsing="false" onMouseClicked="#buy0" prefHeight="30.0" prefWidth="100.0" styleClass="button-buy" text="Acheter ...">
+               <HBox.margin>
+                  <Insets left="225.0" right="25.0" />
+               </HBox.margin></Button>
+                <Button fx:id="buy1" mnemonicParsing="false" onMouseClicked="#buy1" prefHeight="30.0" prefWidth="100.0" styleClass="button-buy" text="Acheter ...">
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin></Button>
+                <Button fx:id="buy2" mnemonicParsing="false" onMouseClicked="#buy2" prefHeight="30.0" prefWidth="100.0" styleClass="button-buy" text="Acheter ...">
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin></Button>
+                <Button fx:id="buy3" mnemonicParsing="false" onMouseClicked="#buy3" prefHeight="30.0" prefWidth="100.0" styleClass="button-buy" text="Acheter ...">
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
     </children>
 </VBox>

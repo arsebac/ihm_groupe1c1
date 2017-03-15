@@ -13,7 +13,7 @@ public class MinimalMagasinListViewCell extends MagasinListViewCell {
 		name.setText(magasin.getName());
 		adresse.setText(magasin.getAdresse());
 		centreCommercial.setText(magasin.getCentreCommercial());
-		image.setImage(new Image("/images/magasin.png"));
+		image.setImage(new Image(magasin.getPathImage()));
 	}
 
 	@Override

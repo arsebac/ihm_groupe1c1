@@ -24,7 +24,7 @@ public class CreateEnseigne {
 		tabPane.getTabs().get(1).setContent(loadGestionMagasin());
 
 		Scene scene = new Scene(parent, 1220, 863);
-		scene.getStylesheets().add("/styles/styles.css");
+		scene.getStylesheets().add("/styles/theme1.css");
 		primaryStage.setTitle("Création d'une enseigne");
 		primaryStage.setScene(scene);
 		primaryStage.show();

@@ -9,17 +9,17 @@
     <children>
         <VBox prefHeight="200.0" prefWidth="100.0">
             <children>
-                <Button mnemonicParsing="false" onMouseClicked="#addProdButton" prefHeight="25.0" prefWidth="70.0" text="Ajouter">
+                <Button styleClass="button-gestion" mnemonicParsing="false" onMouseClicked="#addProdButton" prefHeight="25.0" prefWidth="70.0" text="Ajouter">
                     <VBox.margin>
                         <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
                     </VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onMouseClicked="#modifyProdButton" prefHeight="25.0" prefWidth="70.0" text="Modifier">
+                <Button styleClass="button-gestion"  mnemonicParsing="false" onMouseClicked="#modifyProdButton" prefHeight="25.0" prefWidth="70.0" text="Modifier">
                     <VBox.margin>
                         <Insets bottom="5.0" left="15.0" top="5.0" />
                     </VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onMouseClicked="#ProddelButton" prefHeight="25.0" prefWidth="70.0" text="Supprimer">
+                <Button styleClass="button-gestion"  mnemonicParsing="false" onMouseClicked="#ProddelButton" prefHeight="25.0" prefWidth="70.0" text="Supprimer">
                     <VBox.margin>
                         <Insets bottom="5.0" left="15.0" top="5.0" />
                     </VBox.margin>

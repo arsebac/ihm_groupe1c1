@@ -1,20 +1,30 @@
 [
   {
-    "Name": "Carrefour nice",
-    "pathImage": "pas encore utiliser",
-    "centreCommercial": "Centre commercial de nice",
-    "adresse": "random adresse",
+    "Name": "Nice",
+    "pathImage": "/images/magasin.png",
+    "centreCommercial": "Nice étoile",
+    "adresse": "22 boulevard Jean Médecin Nice",
     "telephone": "04 78 98 22 41",
-    "mail": "carrefour.nice@gmail.com",
-    "siteWeb": "carrefournice.fr"
+    "mail": "tobeortohave.nice@gmail.com",
+    "siteWeb": "nice.toboortohave.fr"
   },
   {
-    "Name": "Carrefour nice",
-    "pathImage": "pas encore utiliser",
-    "centreCommercial": "Centre commercial de nice",
-    "adresse": "random adresse",
+    "Name": "Vénisseux",
+    "pathImage": "/images/magasin-venissieux.jpg",
+    "centreCommercial": "Centre commercial de Vénissieux",
+    "adresse": "136 Boulevard Irène Joliot Curie,  69633 Vénissieux",
+    "telephone": "04 78 98 22 41",
+    "mail": "tobeortohave.venissieux@gmail.com",
+    "siteWeb": "tobeortohave.venissieux.fr"
+  },
+  {
+    "Name": "Sophia Antipolis",
+    "pathImage": "/images/magasin-sophia-antipolis.jpg",
+    "centreCommercial": "Aucun",
+    "adresse": "boulevard Jean Médecin",
     "telephone": "04 78 98 22 41",
     "mail": "carrefour.nice@gmail.com",
-    "siteWeb": "carrefournice.fr"
+    "siteWeb": "tobeortohave.sophia.fr"
   }
+
 ]

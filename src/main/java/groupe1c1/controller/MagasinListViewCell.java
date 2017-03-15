@@ -67,7 +67,7 @@ public class MagasinListViewCell extends ListCell<Magasin> {
 		telephone.setText(magasin.getTelephone());
 		mail.setText(magasin.getMail());
 		siteWeb.setText(magasin.getSiteWeb());
-		image.setImage(new Image("/images/magasin.png"));
+		image.setImage(new Image(magasin.getPathImage()));
 	}
 
 

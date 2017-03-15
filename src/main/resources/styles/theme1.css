@@ -29,9 +29,6 @@
     -fx-text-fill: black;
 }
 
-.VBox {
-    -fx-background-color: red;
-}
 
 .top-button {
     -fx-text-fill: white;
@@ -41,3 +38,29 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 
+
+.button-pagination {
+    -fx-background-radius: 5em;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-text-fill: white;
+    -fx-font-size: 8;
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+}
+
+.button-buy {
+    -fx-text-fill: white, 25;
+    -fx-border-color: dimgray;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-background-color: #426FC5;
+    -fx-pref-width: 150px;
+}
+
+.button-gestion {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+}

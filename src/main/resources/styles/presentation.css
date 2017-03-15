@@ -1,0 +1,15 @@
+.root{
+    -fx-font-size: 11pt;
+    -fx-font-family: "Arial";
+    -fx-base: rgb(128,128,128);
+    -fx-background: rgb(200,200,200);
+}
+
+.button{
+    -fx-text-fill: rgb(255,255,255);
+    -fx-background-color: rgb(128,128,128);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 5;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
